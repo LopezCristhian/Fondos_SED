@@ -1,0 +1,4 @@
+# Requirements for the project
+
+Django==5.2.6
+virtualenv==20.34.0
