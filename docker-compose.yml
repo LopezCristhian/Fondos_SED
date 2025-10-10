@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:15-alpine #latest
+    #container_name: postgres_fondos_sed
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=fondos_sed
+    restart: unless-stopped  # Reinicia el servicio automáticamente si falla
+    ports: 
+      - "5432:5432"
+
+  backend:
+    #container_name: backend_api_django
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    restart: unless-stopped  
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=django-insecure-key-for-development
+      - DB_NAME=fondos_sed
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_HOST=db
+      - DB_PORT=5432
+    ports:
+      - "8000:8000"
+
+volumes:
+  postgres_data:

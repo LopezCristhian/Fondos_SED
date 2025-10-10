@@ -22,43 +22,20 @@ git clone https://github.com/LopezCristhian/Fondos_SED.git
 cd Fondos_SED
 ```
 
-### 2. Crear y activar un entorno virtual
+### 2. Ejecución en contendero Docker
 
+### 2.1 Ejecutar docker-compose
 ```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
-
-# Linux / macOS
-python3 -m venv venv
-source venv/bin/activate
+docker-compose up -d --build 
 ```
 
-### 3. Instalar dependencias
+### 2.2 Crear superusuario para acceder al panel de administración
 ```bash
-pip install -r requirements.txt
+docker-compose exec backend python manage.py createsuperuser
 ```
-
-### 4. Aplicar migraciones
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-### 5. Poblar la base de datos
-```bash
-python manage.py poblar_db
-```
-
-### 6. Crear superusuario
-```bash
-python manage.py createsuperuser
-```
-
-### 7. Ejecutar el servidor
-```bash
-python manage.py runserver
-```
+### 2.3 Para acceder al panel de administración
+- En el navegador web, acceder a la siguiente URL:  
+[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
 
 ---
 
