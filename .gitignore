@@ -1,13 +1,25 @@
-# All python cache
+# === Entorno virtual ===
 venv/
+env/
+
+# === Archivos de Python compilados ===
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-**/__pycache__/
+*.py[cod]
+*$py.class
 
-api/__pycache__/
-api/*.pyc
+# === Migraciones ===
+*/migrations/
+!*/migrations/__init__.py
 
-# All relashionship with migrations
-FondosApp/migrations/*
+# === Base de datos local ===
+db.sqlite3
+
+# === Configuraciones locales ===
+*.env
+.env
+
+# === IDEs y sistema ===
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
