@@ -1,0 +1,81 @@
+﻿code;level;type;account_name;father
+2;1;A;Gastos;
+2.1;2;A;Funcionamiento;
+2.1.2;3;A;Adquisición de bienes y servicios;
+2.1.2.01;4;A;Adquisición de activos no financieros;
+2.1.2.01.01;5;A;Activos fijos;
+2.1.2.01.01.003;6;A;Maquinaria y equipo;
+2.1.2.01.01.003.01;7;A;Maquinaria para uso general;
+2.1.2.01.01.003.01.06;8;C;Otras máquinas para usos generales y sus partes y piezas;2.1.2.01.01.003.01
+2.1.2.01.01.003.02;7;A;Maquinaria para usos especiales;
+2.1.2.01.01.003.02.02;8;C;Máquinas herramientas y sus partes, piezas y accesorios;2.1.2.01.01.003.02
+2.1.2.01.01.003.02.08;8;C;Otra maquinaria para usos especiales y sus partes y piezas;2.1.2.01.01.003.02
+2.1.2.01.01.003.03;7;A;Maquinaria de oficina, contabilidad e informática;
+2.1.2.01.01.003.03.01;8;C;Máquinas para oficina y contabilidad, y sus partes y accesorios;2.1.2.01.01.003.03
+2.1.2.01.01.003.03.02;8;C;Maquinaria de informática y sus partes, piezas y accesorios;2.1.2.01.01.003.03
+2.1.2.01.01.003.04;7;A;Maquinaria y aparatos eléctricos;
+2.1.2.01.01.003.04.06;8;C;Otro equipo eléctrico y sus partes y piezas;2.1.2.01.01.003.04
+2.1.2.01.01.003.05;7;A;Equipo y aparatos de radio, televisión y comunicaciones;
+2.1.2.01.01.003.05.02;8;C;"Aparatos transmisores de televisión y radio; televisión, video y cámaras digitales; teléfonos";2.1.2.01.01.003.05
+2.1.2.01.01.003.05.03;8;C;"Radiorreceptores y receptores de televisión; aparatos para la grabación y reproducción de sonido y
+video; micrófonos, altavoces, amplificadores, etc.";2.1.2.01.01.003.05
+2.1.2.01.01.004;6;A;Activos fijos no clasificados como maquinaria y equipo;
+2.1.2.01.01.004.01;7;A;Muebles, instrumentos musicales, artículos de deporte y antigüedades;
+2.1.2.01.01.004.01.01;8;A;Muebles;
+2.1.2.01.01.004.01.01.02;9;C;Muebles del tipo utilizado en la oficina;2.1.2.01.01.004.01.01
+2.1.2.01.01.004.01.01.04;9;C;Otros muebles N.C.P.;2.1.2.01.01.004.01.01
+2.1.2.02;4;A;Adquisiciones diferentes de activos;
+2.1.2.02.01;5;A;Materiales y suministros;
+2.1.2.02.01.003;6;C;Otros bienes transportables (excepto productos metálicos, maquinaria y equipo);2.1.2.02.01
+2.1.2.02.01.01;6;C;Materiales y suministros;2.1.2.02.01
+2.1.2.02.02;5;A;Adquisición de servicios;
+2.1.2.02.02.007;6;C;"Servicios financieros y servicios conexos; servicios inmobiliarios; y servicios de arrendamiento y leasing";2.1.2.02.02
+2.1.2.02.02.007.01;7;C;Gastos financieros;2.1.2.02.02.007
+2.1.2.02.02.007.02;7;C;Seguros;2.1.2.02.02.007
+2.1.2.02.02.009;6;C;Servicios para la comunidad, sociales y personales;2.1.2.02.02
+2.1.2.02.02.009.01;7;C;Honorarios;2.1.2.02.02.009
+2.1.2.02.02.009.02;7;C;Servicos Técnicos;2.1.2.02.02.009
+2.1.2.02.02.009.03;7;C;Mantenimiento;2.1.2.02.02.009
+2.1.2.02.02.009.04;7;C;Servicios públicos;2.1.2.02.02.009
+2.1.2.02.02.009.05;7;C;Impresos y publicaciones;2.1.2.02.02.009
+2.1.2.02.02.009.06;7;C;Comunicación y transporte;2.1.2.02.02.009
+2.1.2.02.02.009.07;7;C;Eventos culturales y deportivos;2.1.2.02.02.009
+2.1.2.02.02.009.08;7;C;Gastos financieros;2.1.2.02.02.009
+2.1.2.02.02.009.09;7;C;Otros gastos;2.1.2.02.02.009
+2.3;2;A;Inversión;
+2.3.2;3;A;Adquisición de bienes y servicios;
+2.3.2.01;4;A;Adquisición de activos no financieros;
+2.3.2.01.01;5;A;Activos fijos;
+2.3.2.01.01.003;6;A;Maquinaria y equipo;
+2.3.2.01.01.003.01;7;A;Maquinaria para uso general;
+2.3.2.01.01.003.01.06;8;C;Otras máquinas para usos generales y sus partes y piezas;2.3.2.01.01.003.01
+2.3.2.01.01.003.02;7;A;Maquinaria para usos especiales;
+2.3.2.01.01.003.02.08;8;C;Otra maquinaria para usos especiales y sus partes y piezas;2.3.2.01.01.003.02
+2.3.2.01.01.003.03;7;A;Maquinaria de oficina, contabilidad e informática;
+2.3.2.01.01.003.03.01;8;C;Máquinas para oficina y contabilidad, y sus partes y accesorios;2.3.2.01.01.003.03
+2.3.2.01.01.003.03.02;8;C;Maquinaria de informática y sus partes, piezas y accesorios;2.3.2.01.01.003.03
+2.3.2.01.01.003.05;8;C;"Aparatos transmisores de televisión y radio; televisión, video y cámaras digitales; teléfonos";
+2.3.2.01.01.004;6;A;Activos fijos no clasificados como maquinaria y equipo;
+2.3.2.01.01.004.01;7;A;Muebles, instrumentos musicales, artículos de deporte y antigüedades;2.3.2.01.01.004
+2.3.2.01.01.004.01.01;8;A;Muebles;2.3.2.01.01.004.01
+2.3.2.01.01.004.01.01.01;9;C;Asientos;2.3.2.01.01.004.01.01
+2.3.2.01.01.004.01.01.02;9;C;Muebles del tipo utilizado en la oficina;2.3.2.01.01.004.01.01
+2.3.2.01.01.004.01.01.03;9;C;Muebles de madera, del tipo usado en la cocina;2.3.2.01.01.004.01.01
+2.3.2.01.01.004.01.01.04;9;C;Otros muebles N.C.P.;2.3.2.01.01.004.01.01
+2.3.2.01.01.004.01.02;8;C;Instrumentos musicales;2.3.2.01.01.004.01
+2.3.2.01.01.004.01.03;8;C;Artículos de deporte;2.3.2.01.01.004.01
+2.3.2.01.01.004.01.04;8;C;Antigüedades u otros objetos de arte;2.3.2.01.01.004.01
+2.3.2.01.01.005;6;A;Otros activos fijos;
+2.3.2.01.01.005.01;7;A;Recursos biológicos cultivados;
+2.3.2.01.01.005.01.01;8;A;Recursos animales que generan productos en forma repetida;2.3.2.01.01.005.01
+2.3.2.01.01.005.01.01.01;9;C;Animales de cría;2.3.2.01.01.005.01.01
+2.3.2.01.01.005.01.01.02;9;C;Ganado lechero;2.3.2.01.01.005.01.01
+2.3.2.01.01.005.01.02;8;A;Árboles, cultivos y plantas que generan productos en forma repetida;
+2.3.2.01.01.005.01.02.06;9;C;Otros árboles, cultivos y plantas que generan productos en forma repetida;2.3.2.01.01.005.01.02
+2.3.2.02;4;A;Adquisiciones diferentes de activos;
+2.3.2.02.02;5;A;Adquisición de servicios;
+2.3.2.02.02.005;6;C;Construcción y servicios de la construcción;
+2.3.2.02.02.009;6;C;Servicios para la comunidad, sociales y personales;
+2.3.2.02.02.009.01;7;C;Proyectos educativos transversales;2.3.2.02.02.009
+2.3.2.02.02.009.02;7;C;Otros programas de inversion;2.3.2.02.02.009
+2.3.2.02.02.009.03;7;C;Capacitacion del recurso humano (educandos);2.3.2.02.02.009

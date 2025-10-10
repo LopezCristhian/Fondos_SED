@@ -1,4 +1,10 @@
 # Requirements for the project
 
-Django==5.2.6
-virtualenv==20.34.0
+Django==5.2.7
+Pandas==2.3.3
+djangorestframework==3.16.1
+drf-spectacular==0.28.0
+#virtualenv==20.34.0
+
+# Biblioteca para DB PostgreSQL
+#psycopg2-binary==2.9.10

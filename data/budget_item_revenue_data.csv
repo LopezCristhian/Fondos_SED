@@ -1,0 +1,25 @@
+﻿code;level;type;account_name;father
+1;1;A;Ingresos;
+1.1;2;A;Ingresos corriente;
+1.1.02;3;A;Ingresos no tributarios;
+1.1.02.05;4;A;Venta de bienes y servicios;
+1.1.02.05.002;5;A;Ventas incidentales de establecimientos no de mercado;1.1.02.05.002
+1.1.02.05.002.09;6;C;Servicios para la comunidad, sociales y personales;1.1.02.05.002.09
+1.1.02.05.002.09.05;7;C;Productos agrícolas y pecuarios;1.1.02.05.002.09
+1.1.02.05.002.09.07;7;C;Arrendamientos (infraestructura, equipos, tienda escolar, etc);1.1.02.05.002.09
+1.1.02.05.002.09.08;7;C;Otros ingresos: fotocopias;1.1.02.05.002.09
+1.1.02.06;4;C;Transferencias corrientes;
+1.1.02.06.001;5;A;Sistema General de Participaciones;1.1.02.06
+1.1.02.06.001.01;6;A;Participación para educación;1.1.02.06.001
+1.1.02.06.001.01.03;7;A;Calidad;1.1.02.06.001.01
+1.1.02.06.001.01.03.02;8;C;Calidad  por gratuidad;1.1.02.06.001.01.03
+1.1.02.06.006;5;A;Transferencias de otras entidades del gobierno general;
+1.1.02.06.006.01;5;A;Nacional;1.1.02.06.006
+1.1.02.06.006.02;5;A;Dapartamental;1.1.02.06.006
+1.1.02.06.006.03;5;A;Municipal;1.1.02.06.006
+1.2.05;3;A;Rendimientos financieros;
+1.2.05.02;3;A;Depositos;1.2.05
+1.2.08;3;A;Transferencias de capital;
+1.2.08.01;3;A;Donaciones;1.2.08
+1.2.10;4;;Recursos de balance;
+1.2.10.02;4;C;Superávit fiscal;1.2.10

@@ -15,8 +15,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from drf_spectacular.views import SpectacularAPIView
 
+from django.views.generic import TemplateView
+
+class ScalarDocsView(TemplateView):
+    template_name = 'scalar_docs.html'
+    
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    path('api/', include('FondosApp.urls')),
+
+    # OpenAPI schema JSON
+    path('scalar/', ScalarDocsView.as_view(), name='scalar'),
+    
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),    
+
 ]
