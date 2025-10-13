@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'FondosApp',
     'rest_framework',
     'drf_spectacular',
+    'drf_spectacular_sidecar',  # Para documentación Swagger
 ]
 
 MIDDLEWARE = [

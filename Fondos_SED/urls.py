@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from drf_spectacular.views import SpectacularAPIView
+
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
 
 from django.views.generic import TemplateView
 
@@ -28,9 +33,15 @@ urlpatterns = [
     
     path('api/', include('FondosApp.urls')),
 
-    # OpenAPI schema JSON
-    path('scalar/', ScalarDocsView.as_view(), name='scalar'),
+    # Scalar UI
+    path('scalar/', ScalarDocsView.as_view(), name='scalar-ui'),
     
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),    
+    
+    # Swagger UI
+    path('swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    
+    # ReDoc
+    path('redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 
 ]

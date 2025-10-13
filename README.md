@@ -16,34 +16,34 @@ Tener instalado:
 
 ## Instalación y configuración
 
-### 1.Clonar el repositorio
+### 1. Clonar el repositorio
 ```bash
 git clone https://github.com/LopezCristhian/Fondos_SED.git
 cd Fondos_SED
 ```
 
-### 2. Ejecución en contendero Docker
-
-### 2.1 Ejecutar docker-compose
+### 2. Ejecutar docker-compose
 ```bash
 docker-compose up -d --build 
 ```
 
-### 2.2 Crear superusuario para acceder al panel de administración
+### 3. Crear superusuario para acceder al panel de administración
 ```bash
 docker-compose exec backend python manage.py createsuperuser
 ```
 ### 2.3 Para acceder al panel de administración
 - En el navegador web, acceder a la siguiente URL:  
-[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin)
 
 ---
 
 ## Documentación de la API
 
 - Documentación interactiva (Scalar UI):  
-  [http://127.0.0.1:8000/api/scalar](http://127.0.0.1:8000/api/scalar)
-
+  [http://127.0.0.1:8000/scalar/](http://127.0.0.1:8000/api/scalar)
+- Documentación interactiva (Swagger UI):  
+  [http://127.0.0.1:8000/swagger/](http://127.0.0.1:8000/api/swagger)
+  [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/api/redoc)
 - Interfaz Django REST Framework:  
   [http://127.0.0.1:8000/api/](http://127.0.0.1:8000/api/)
 
@@ -81,6 +81,7 @@ docker-compose exec backend python manage.py createsuperuser
 - Django REST Framework (DRF)  
 - SQLite 
 - Scalar API Docs  
+- Swagger UI
 
 ---
 

@@ -64,33 +64,33 @@ from .serializers import (
     list=extend_schema(
         summary="Listar todas las instituciones", 
         description="Obtiene una lista de todas las instituciones registradas en el sistema", 
-        tags=['Instituciones']),
+        tags=['Institutions']),
     
     retrieve=extend_schema(
         summary="Obtener una institución específica",
         description="Obtiene los detalles de una institución por su ID", 
-        tags=['Instituciones']),
+        tags=['Institutions']),
     
     create=extend_schema(
         summary="Crear una nueva institución", 
         description="Crea una nueva institución en el sistema", 
-        tags=['Instituciones'], 
+        tags=['Institutions'], 
         examples=[OpenApiExample('Ejemplo de creación', value={'name': 'Nuestra señora de las nieves'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una institución",
         description="Actualiza completamente una institución existente",
-        tags=['Instituciones']
+        tags=['Institutions']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una institución",
         description="Actualiza uno o más campos de una institución existente",
-        tags=['Instituciones']
+        tags=['Institutions']
     ),
     destroy=extend_schema(
         summary="Eliminar una institución",
         description="Elimina una institución del sistema",
-        tags=['Instituciones']
+        tags=['Institutions']
     )
 )
 class InstitutionViewSet(viewsets.ModelViewSet):
@@ -120,7 +120,7 @@ class InstitutionViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Instituciones']
+        tags=['Institutions']
     )
     @action(detail=False, methods=['get'])
     def search_by_name(self, request):
@@ -135,33 +135,33 @@ class InstitutionViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todos los reportes de presupuesto",
         description="Obtiene una lista de todos los reportes de presupuesto registrados en el sistema",
-        tags=['Reporte de Presupuesto']),
+        tags=['budget_report']),
     
     retrieve=extend_schema(
         summary="Obtener un reporte de presupuesto específico",
         description="Obtiene los detalles de un reporte de presupuesto por su ID",
-        tags=['Reporte de Presupuesto']),
+        tags=['budget_report']),
     
     create=extend_schema(
         summary="Crear un nuevo reporte de presupuesto",
         description="Crea un nuevo reporte de presupuesto en el sistema",
-        tags=['Reporte de Presupuesto'],
+        tags=['budget_report'],
         examples=[OpenApiExample('Ejemplo de creación', value={'period_type': 'Trimestral', 'period_number': 1, 'year': 2024}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar un reporte de presupuesto",
         description="Actualiza completamente un reporte de presupuesto existente",
-        tags=['Reporte de Presupuesto']
+        tags=['budget_report']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente un reporte de presupuesto",
         description="Actualiza uno o más campos de un reporte de presupuesto existente",
-        tags=['Reporte de Presupuesto']
+        tags=['budget_report']
     ),
     destroy=extend_schema(
         summary="Eliminar un reporte de presupuesto",
         description="Elimina un reporte de presupuesto del sistema",
-        tags=['Reporte de Presupuesto']
+        tags=['budget_report']
     )
 )
 class BudgetReportViewSet(viewsets.ModelViewSet):
@@ -191,7 +191,7 @@ class BudgetReportViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Reporte de Presupuesto']
+        tags=['budget_report']
     )
     @action(detail=False, methods=['get'])
     def search_by_period(self, request):
@@ -206,33 +206,33 @@ class BudgetReportViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todos los rubros presupuestales de ingresos",
         description="Obtiene una lista de todos los rubros presupuestales de ingresos registrados en el sistema",
-        tags=['Rubros Presupuestales de Ingresos']),
+        tags=['budget_item_revenue']),
     
     retrieve=extend_schema(
         summary="Obtener un rubro presupuestal de ingresos específico",
         description="Obtiene los detalles de un rubro presupuestal de ingresos por su ID",
-        tags=['Rubros Presupuestales de Ingresos']),
+        tags=['budget_item_revenue']),
     
     create=extend_schema(
         summary="Crear un nuevo rubro presupuestal de ingresos",
         description="Crea un nuevo rubro presupuestal de ingresos en el sistema",
-        tags=['Rubros Presupuestales de Ingresos'],
+        tags=['budget_item_revenue'],
         examples=[OpenApiExample('Ejemplo de creación', value={'code': '001-2024-ADM', 'level': '1', 'type': 'A', 'account_name': 'Gastos Administrativos', 'father': '001-2024-ADM'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar un rubro presupuestal de ingresos",
         description="Actualiza completamente un rubro presupuestal de ingresos existente",
-        tags=['Rubros Presupuestales de Ingresos']
+        tags=['budget_item_revenue']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente un rubro presupuestal de ingresos",
         description="Actualiza uno o más campos de un rubro presupuestal de ingresos existente",
-        tags=['Rubros Presupuestales de Ingresos']
+        tags=['budget_item_revenue']
     ),
     destroy=extend_schema(
         summary="Eliminar un rubro presupuestal de ingresos",
         description="Elimina un rubro presupuestal de ingresos del sistema",
-        tags=['Rubros Presupuestales de Ingresos']
+        tags=['budget_item_revenue']
     )
 )
 class BudgetItemRevenueViewSet(viewsets.ModelViewSet):
@@ -262,7 +262,7 @@ class BudgetItemRevenueViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Rubros Presupuestales de Ingresos']
+        tags=['budget_item_revenue']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -277,33 +277,33 @@ class BudgetItemRevenueViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todos los rubros presupuestales de gastos",
         description="Obtiene una lista de todos los rubros presupuestales de gastos registrados en el sistema",
-        tags=['Rubros Presupuestales de Gastos']),
+        tags=['budget_item_expenses']),
     
     retrieve=extend_schema(
         summary="Obtener un rubro presupuestal de gastos específico",
         description="Obtiene los detalles de un rubro presupuestal de gastos por su ID",
-        tags=['Rubros Presupuestales de Gastos']),
+        tags=['budget_item_expenses']),
     
     create=extend_schema(
         summary="Crear un nuevo rubro presupuestal de gastos",
         description="Crea un nuevo rubro presupuestal de gastos en el sistema",
-        tags=['Rubros Presupuestales de Gastos'],
+        tags=['budget_item_expenses'],
         examples=[OpenApiExample('Ejemplo de creación', value={'code': '001-2024-ADM', 'level': '1', 'type': 'A', 'account_name': 'Gastos Administrativos', 'father': '001-2024-ADM'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar un rubro presupuestal de gastos",
         description="Actualiza completamente un rubro presupuestal de gastos existente",
-        tags=['Rubros Presupuestales de Gastos']
+        tags=['budget_item_expenses']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente un rubro presupuestal de gastos",
         description="Actualiza uno o más campos de un rubro presupuestal de gastos existente",
-        tags=['Rubros Presupuestales de Gastos']
+        tags=['budget_item_expenses']
     ),
     destroy=extend_schema(
         summary="Eliminar un rubro presupuestal de gastos",
         description="Elimina un rubro presupuestal de gastos del sistema",
-        tags=['Rubros Presupuestales de Gastos']
+        tags=['budget_item_expenses']
     )
 )
 class BudgetItemExpensesViewSet(viewsets.ModelViewSet):
@@ -333,7 +333,7 @@ class BudgetItemExpensesViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Rubros Presupuestales de Gastos']
+        tags=['budget_item_expenses']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -348,33 +348,33 @@ class BudgetItemExpensesViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todos los plan contables",
         description="Obtiene una lista de todos los plan contables registrados en el sistema",
-        tags=['Plan Contable']),
+        tags=['accountant_puc']),
     
     retrieve=extend_schema(
         summary="Obtener un plan contable específico",
         description="Obtiene los detalles de un plan contable por su ID",
-        tags=['Plan Contable']),
+        tags=['accountant_puc']),
     
     create=extend_schema(
         summary="Crear un nuevo plan contable",
         description="Crea un nuevo plan contable en el sistema",
-        tags=['Plan Contable'],
+        tags=['accountant_puc'],
         examples=[OpenApiExample('Ejemplo de creación', value={'code': '001-2024-ADM', 'name': 'Plan Contable Administrativo', 'nature': 'General', 'father': '001-2024-ADM', 'type': 'General'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar un plan contable",
         description="Actualiza completamente un plan contable existente",
-        tags=['Plan Contable']
+        tags=['accountant_puc']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente un plan contable",
         description="Actualiza uno o más campos de un plan contable existente",
-        tags=['Plan Contable']
+        tags=['accountant_puc']
     ),
     destroy=extend_schema(
         summary="Eliminar un plan contable",
         description="Elimina un plan contable del sistema",
-        tags=['Plan Contable']
+        tags=['accountant_puc']
     )
 )
 class AccountantPucViewSet(viewsets.ModelViewSet):
@@ -404,7 +404,7 @@ class AccountantPucViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Plan Contable']
+        tags=['accountant_puc']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -419,17 +419,17 @@ class AccountantPucViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las cuentas de gastos",
         description="Obtiene una lista de todas las cuentas de gastos registradas en el sistema",
-        tags=['Cuentas de Gastos']
+        tags=['expenses_accounts']
     ),
     retrieve=extend_schema(
         summary="Obtener una cuenta de gasto específica",
         description="Obtiene los detalles de una cuenta de gasto por su ID",
-        tags=['Cuentas de Gastos']
+        tags=['expenses_accounts']
     ),
     create=extend_schema(
         summary="Crear una nueva cuenta de gasto",
         description="Crea una nueva cuenta de gasto en el sistema",
-        tags=['Cuentas de Gastos'],
+        tags=['expenses_accounts'],
         examples=[
             OpenApiExample(
                 'Ejemplo de creación',
@@ -444,17 +444,17 @@ class AccountantPucViewSet(viewsets.ModelViewSet):
     update=extend_schema(
         summary="Actualizar una cuenta de gasto",
         description="Actualiza completamente una cuenta de gasto existente",
-        tags=['Cuentas de Gastos']
+        tags=['expenses_accounts']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una cuenta de gasto",
         description="Actualiza uno o más campos de una cuenta de gasto existente",
-        tags=['Cuentas de Gastos']
+        tags=['expenses_accounts']
     ),
     destroy=extend_schema(
         summary="Eliminar una cuenta de gasto",
         description="Elimina una cuenta de gasto del sistema",
-        tags=['Cuentas de Gastos']
+        tags=['expenses_accounts']
     )
 )
 class ExpenseAccountsViewSet(viewsets.ModelViewSet):
@@ -484,7 +484,7 @@ class ExpenseAccountsViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Cuentas de Gastos']
+        tags=['expenses_accounts']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -499,33 +499,33 @@ class ExpenseAccountsViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las fuentes de recursos",
         description="Obtiene una lista de todas las fuentes de recursos registradas en el sistema",
-        tags=['Fuentes de Recursos']),
+        tags=['source_resources']),
     
     retrieve=extend_schema(
         summary="Obtener una fuente de recursos específico",
         description="Obtiene los detalles de una fuente de recursos por su ID",
-        tags=['Fuentes de Recursos']),
+        tags=['source_resources']),
     
     create=extend_schema(
         summary="Crear una nueva fuente de recursos",
         description="Crea una nueva fuente de recursos en el sistema",
-        tags=['Fuentes de Recursos'],
+        tags=['source_resources'],
         examples=[OpenApiExample('Ejemplo de creación', value={'source_name': 'Fuente de Recursos Administrativa'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una fuente de recursos",
         description="Actualiza completamente una fuente de recursos existente",
-        tags=['Fuentes de Recursos']
+        tags=['source_resources']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una fuente de recursos",
         description="Actualiza uno o más campos de una fuente de recursos existente",
-        tags=['Fuentes de Recursos']
+        tags=['source_resources']
     ),
     destroy=extend_schema(
         summary="Eliminar una fuente de recursos",
         description="Elimina una fuente de recursos del sistema",
-        tags=['Fuentes de Recursos']
+        tags=['source_resources']
     )
 )
 class SourceResourcesViewSet(viewsets.ModelViewSet):
@@ -555,7 +555,7 @@ class SourceResourcesViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Fuentes de Recursos']
+        tags=['source_resources']
     )
     @action(detail=False, methods=['get'])
     def search_by_name(self, request):
@@ -570,33 +570,33 @@ class SourceResourcesViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todos los bancos",
         description="Obtiene una lista de todos los bancos registrados en el sistema",
-        tags=['Bancos']),
+        tags=['bank']),
     
     retrieve=extend_schema(
         summary="Obtener un banco específico",
         description="Obtiene los detalles de un banco por su ID",
-        tags=['Bancos']),
+        tags=['bank']),
     
     create=extend_schema(
         summary="Crear un nuevo banco",
         description="Crea un nuevo banco en el sistema",
-        tags=['Bancos'],
+        tags=['bank'],
         examples=[OpenApiExample('Ejemplo de creación', value={'bank_name': 'Banco de Prueba'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar un banco",
         description="Actualiza completamente un banco existente",
-        tags=['Bancos']
+        tags=['bank']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente un banco",
         description="Actualiza uno o más campos de un banco existente",
-        tags=['Bancos']
+        tags=['bank']
     ),
     destroy=extend_schema(
         summary="Eliminar un banco",
         description="Elimina un banco del sistema",
-        tags=['Bancos']
+        tags=['bank']
     )
 )
 class BankViewSet(viewsets.ModelViewSet):
@@ -626,7 +626,7 @@ class BankViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Bancos']
+        tags=['bank']
     )
     @action(detail=False, methods=['get'])
     def search_by_name(self, request):
@@ -641,33 +641,33 @@ class BankViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las ejecuciones presupuestal de gastos F7",
         description="Obtiene una lista de todas las ejecuciones presupuestal de gastos F7 registradas en el sistema",
-        tags=['Ejecución Presupuestal de Gastos F7']),
+        tags=['f7_budget_execution_expenses']),
     
     retrieve=extend_schema(
         summary="Obtener una ejecución presupuestal de gastos F7 específica",
         description="Obtiene los detalles de una ejecución presupuestal de gastos F7 por su ID",
-        tags=['Ejecución Presupuestal de Gastos F7']),
+        tags=['f7_budget_execution_expenses']),
     
     create=extend_schema(
         summary="Crear una nueva ejecución presupuestal de gastos F7",
         description="Crea una nueva ejecución presupuestal de gastos F7 en el sistema",
-        tags=['Ejecución Presupuestal de Gastos F7'],
+        tags=['f7_budget_execution_expenses'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_budget_item_expenses': '001-2024-ADM', 'id_institution': '001-2024-ADM', 'id_budget_report': '001-2024-ADM', 'program_code': '001-2024-ADM'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una ejecución presupuestal de gastos F7",
         description="Actualiza completamente una ejecución presupuestal de gastos F7 existente",
-        tags=['Ejecución Presupuestal de Gastos F7']
+        tags=['f7_budget_execution_expenses']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una ejecución presupuestal de gastos F7",
         description="Actualiza uno o más campos de una ejecución presupuestal de gastos F7 existente",
-        tags=['Ejecución Presupuestal de Gastos F7']
+        tags=['f7_budget_execution_expenses']
     ),
     destroy=extend_schema(
         summary="Eliminar una ejecución presupuestal de gastos F7",
         description="Elimina una ejecución presupuestal de gastos F7 del sistema",
-        tags=['Ejecución Presupuestal de Gastos F7']
+        tags=['f7_budget_execution_expenses']
     )
 )
 class F7BudgetExecutionExpensesViewSet(viewsets.ModelViewSet):
@@ -697,7 +697,7 @@ class F7BudgetExecutionExpensesViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Ejecución Presupuestal de Gastos F7']
+        tags=['f7_budget_execution_expenses']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -712,33 +712,33 @@ class F7BudgetExecutionExpensesViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las cuentas por pagar F11",
         description="Obtiene una lista de todas las cuentas por pagar F11 registradas en el sistema",
-        tags=['Cuentas por Pagar F11']),
+        tags=['f11_accounts_payable']),
     
     retrieve=extend_schema(
         summary="Obtener una cuenta por pagar F11 específica",
         description="Obtiene los detalles de una cuenta por pagar F11 por su ID",
-        tags=['Cuentas por Pagar F11']),
+        tags=['f11_accounts_payable']),
     
     create=extend_schema(
         summary="Crear una nueva cuenta por pagar F11",
         description="Crea una nueva cuenta por pagar F11 en el sistema",
-        tags=['Cuentas por Pagar F11'],
+        tags=['f11_accounts_payable'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_budget_item_expenses': '001-2024-ADM', 'id_institution': '001-2024-ADM', 'id_budget_report': '001-2024-ADM', 'description': 'Descripción de la cuenta'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una cuenta por pagar F11",
         description="Actualiza completamente una cuenta por pagar F11 existente",
-        tags=['Cuentas por Pagar F11']
+        tags=['f11_accounts_payable']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una cuenta por pagar F11",
         description="Actualiza uno o más campos de una cuenta por pagar F11 existente",
-        tags=['Cuentas por Pagar F11']
+        tags=['f11_accounts_payable']
     ),
     destroy=extend_schema(
         summary="Eliminar una cuenta por pagar F11",
         description="Elimina una cuenta por pagar F11 del sistema",
-        tags=['Cuentas por Pagar F11']
+        tags=['f11_accounts_payable']
     )
 )
 class F11AccountsPayableViewSet(viewsets.ModelViewSet):
@@ -768,7 +768,7 @@ class F11AccountsPayableViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Cuentas por Pagar F11']
+        tags=['f11_accounts_payable']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -783,33 +783,33 @@ class F11AccountsPayableViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las contrataciones",
         description="Obtiene una lista de todas las contrataciones registradas en el sistema",
-        tags=['Contrataciones F13']),
+        tags=['f13_hiring']),
     
     retrieve=extend_schema(
         summary="Obtener una contratación específica",
         description="Obtiene los detalles de una contratación por su ID",
-        tags=['Contrataciones F13']),
+        tags=['f13_hiring']),
     
     create=extend_schema(
         summary="Crear una nueva contratación",
         description="Crea una nueva contratación en el sistema",
-        tags=['Contrataciones F13'],
+        tags=['f13_hiring'],
         examples=[OpenApiExample('Ejemplo de creación', value={'contract_number': '001-2024-ADM', 'contractor_name': 'Contratista', 'nit_cc_contractor': '1234567890', 'budget_unavailability': '100', 'value_availability': '100', 'signature_date': '2024-01-01', 'contract_form': 'Formulario 1', 'budget_registration_date': '2024-01-01', 'budget_registration_number': '001-2024-ADM', 'budget_record_value': '100', 'date_approval_single_guarantee': '2024-01-01', 'start_date': '2024-01-01', 'contract_term': '1', 'addition_date': '2024-01-01', 'addtion_term': '1', 'addition_value': '100', 'value_payments_made': '100', 'completion_date': '2024-01-01', 'sattlement_date': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una contratación",
         description="Actualiza completamente una contratación existente",
-        tags=['Contrataciones F13']
+        tags=['f13_hiring']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una contratación",
         description="Actualiza uno o más campos de una contratación existente",
-        tags=['Contrataciones F13']
+        tags=['f13_hiring']
     ),
     destroy=extend_schema(
         summary="Eliminar una contratación",
         description="Elimina una contratación del sistema",
-        tags=['Contrataciones F13']
+        tags=['f13_hiring']
     )
 )
 class F13HiringViewSet(viewsets.ModelViewSet):    
@@ -839,7 +839,7 @@ class F13HiringViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Contrataciones F13']
+        tags=['f13_hiring']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -854,33 +854,33 @@ class F13HiringViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las relaciones de ingresos IEF02",
         description="Obtiene una lista de todas las relaciones de ingresos IEF02 registradas en el sistema",
-        tags=['Relaciones de Ingresos IEF02']),
+        tags=['ief02_revenue_statement']),
     
     retrieve=extend_schema(
         summary="Obtener una relación de ingresos IEF02 específica",
         description="Obtiene los detalles de una relación de ingresos IEF02 por su ID",
-        tags=['Relaciones de Ingresos IEF02']),
+        tags=['ief02_revenue_statement']),
     
     create=extend_schema(
         summary="Crear una nueva relación de ingresos IEF02",
         description="Crea una nueva relación de ingresos IEF02 en el sistema",
-        tags=['Relaciones de Ingresos IEF02'],
+        tags=['ief02_revenue_statement'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_budget_item_revenue': '001-2024-ADM', 'id_institution': '001-2024-ADM', 'id_budget_report': '001-2024-ADM', 'collection_date': '2024-01-01', 'detail': 'Detalle', 'receipt_bank': 'Banco', 'value': '100', 'bank_account_number': '1234567890', 'bank': 'Banco', 'revenue_resources': 'Fuente de Ingresos', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una relación de ingresos IEF02",
         description="Actualiza completamente una relación de ingresos IEF02 existente",
-        tags=['Relaciones de Ingresos IEF02']
+        tags=['ief02_revenue_statement']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una relación de ingresos IEF02",        
         description="Actualiza uno o más campos de una relación de ingresos IEF02 existente",
-        tags=['Relaciones de Ingresos IEF02']
+        tags=['ief02_revenue_statement']
     ),
     destroy=extend_schema(
         summary="Eliminar una relación de ingresos IEF02",
         description="Elimina una relación de ingresos IEF02 del sistema",
-        tags=['Relaciones de Ingresos IEF02']
+        tags=['ief02_revenue_statement']
     )
 )
 class Ief02RevenueStatementViewSet(viewsets.ModelViewSet):
@@ -910,7 +910,7 @@ class Ief02RevenueStatementViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Relaciones de Ingresos IEF02']
+        tags=['ief02_revenue_statement']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -925,33 +925,33 @@ class Ief02RevenueStatementViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las relaciones de pagos IEF04",
         description="Obtiene una lista de todas las relaciones de pagos IEF04 registradas en el sistema",
-        tags=['Relaciones de Pagos IEF04']),
+        tags=['if04_payments_relationship']),
     
     retrieve=extend_schema(
         summary="Obtener una relación de pagos IEF04 específica",
         description="Obtiene los detalles de una relación de pagos IEF04 por su ID",
-        tags=['Relaciones de Pagos IEF04']),
+        tags=['if04_payments_relationship']),
     
     create=extend_schema(
         summary="Crear una nueva relación de pagos IEF04",
         description="Crea una nueva relación de pagos IEF04 en el sistema",
-        tags=['Relaciones de Pagos IEF04'],
+        tags=['if04_payments_relationship'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_budget_item_expenses': '001-2024-ADM', 'id_institution': '001-2024-ADM', 'id_budget_report': '001-2024-ADM', 'collection_date': '2024-01-01', 'receipt_number': '1234567890', 'detail': 'Detalle', 'beneficiary': 'Beneficiario', 'cc_nit': '1234567890', 'total_value_receipt': '100', 'withholdings': '100', 'discounts': '100', 'bank': 'Banco', 'account_number': '1234567890', 'check_number': '1234567890', 'funding_source': 'Fuente de Financiación', 'beneficiary': 'Beneficiario', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(        
         summary="Actualizar una relación de pagos IEF04",
         description="Actualiza completamente una relación de pagos IEF04 existente",
-        tags=['Relaciones de Pagos IEF04']
+        tags=['if04_payments_relationship']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una relación de pagos IEF04",        
         description="Actualiza uno o más campos de una relación de pagos IEF04 existente",
-        tags=['Relaciones de Pagos IEF04']
+        tags=['if04_payments_relationship']
     ),
     destroy=extend_schema(
         summary="Eliminar una relación de pagos IEF04",
         description="Elimina una relación de pagos IEF04 del sistema",
-        tags=['Relaciones de Pagos IEF04']
+        tags=['if04_payments_relationship']
     )
 )
 class Ief04PaymentsRelationshipViewSet(viewsets.ModelViewSet):
@@ -981,7 +981,7 @@ class Ief04PaymentsRelationshipViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Relaciones de Pagos IEF04']
+        tags=['if04_payments_relationship']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -998,33 +998,33 @@ class Ief04PaymentsRelationshipViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todos los presupuestos de ingresos",
         description="Obtiene una lista de todos los presupuestos de ingresos registrados en el sistema",
-        tags=['Presupuesto de Ingresos']),
+        tags=['revenue_budget']),
     
     retrieve=extend_schema(
         summary="Obtener un presupuesto de ingresos específico",
         description="Obtiene los detalles de un presupuesto de ingresos por su ID",
-        tags=['Presupuesto de Ingresos']),
+        tags=['revenue_budget']),
     
     create=extend_schema(
         summary="Crear un nuevo presupuesto de ingresos",
         description="Crea un nuevo presupuesto de ingresos en el sistema",
-        tags=['Presupuesto de Ingresos'],
+        tags=['revenue_budget'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_institution': '001-2024-ADM', 'id_budget_item_revenue': '001-2024-ADM', 'period': 'Trimestral', 'initial_appropriation': '100', 'final_appropriation': '100', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar un presupuesto de ingresos",
         description="Actualiza completamente un presupuesto de ingresos existente",
-        tags=['Presupuesto de Ingresos']
+        tags=['revenue_budget']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente un presupuesto de ingresos",
         description="Actualiza uno o más campos de un presupuesto de ingresos existente",
-        tags=['Presupuesto de Ingresos']
+        tags=['revenue_budget']
     ),
     destroy=extend_schema(
         summary="Eliminar un presupuesto de ingresos",
         description="Elimina un presupuesto de ingresos del sistema",
-        tags=['Presupuesto de Ingresos']
+        tags=['revenue_budget']
     )
 )
 class RevenueBudgetViewSet(viewsets.ModelViewSet):
@@ -1054,7 +1054,7 @@ class RevenueBudgetViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Presupuesto de Ingresos']
+        tags=['revenue_budget']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -1069,33 +1069,33 @@ class RevenueBudgetViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las modificaciones del periodo - ingresos",
         description="Obtiene una lista de todas las modificaciones del periodo - ingresos registradas en el sistema",
-        tags=['Modificaciones del Periodo - Ingresos']),
+        tags=['changes_revenue_period']),
     
     retrieve=extend_schema(
         summary="Obtener una modificación del periodo - ingresos específica",
         description="Obtiene los detalles de una modificación del periodo - ingresos por su ID",
-        tags=['Modificaciones del Periodo - Ingresos']),
+        tags=['changes_revenue_period']),
     
     create=extend_schema(
         summary="Crear una nueva modificación del periodo - ingresos",
         description="Crea una nueva modificación del periodo - ingresos en el sistema",
-        tags=['Modificaciones del Periodo - Ingresos'],
+        tags=['changes_revenue_period'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_revenue_budget': '001-2024-ADM', 'addition': '100', 'reduction': '100', 'credit_transfer': '100', 'countercredit_transfer': '100', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una modificación del periodo - ingresos",
         description="Actualiza completamente una modificación del periodo - ingresos existente",
-        tags=['Modificaciones del Periodo - Ingresos']
+        tags=['changes_revenue_period']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una modificación del periodo - ingresos",
         description="Actualiza uno o más campos de una modificación del periodo - ingresos existente",
-        tags=['Modificaciones del Periodo - Ingresos']
+        tags=['changes_revenue_period']
     ),
     destroy=extend_schema(
         summary="Eliminar una modificación del periodo - ingresos",
         description="Elimina una modificación del periodo - ingresos del sistema",
-        tags=['Modificaciones del Periodo - Ingresos']
+        tags=['changes_revenue_period']
     )
 )
 class ChangesRevenuePeriodViewSet(viewsets.ModelViewSet):
@@ -1125,7 +1125,7 @@ class ChangesRevenuePeriodViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Modificaciones del Periodo - Ingresos']
+        tags=['changes_revenue_period']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -1140,32 +1140,32 @@ class ChangesRevenuePeriodViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las modificaciones acumuladas - ingresos",
         description="Obtiene una lista de todas las modificaciones acumuladas - ingresos registradas en el sistema",
-        tags=['Modificaciones Acumuladas - Ingresos']), 
+        tags=['cumulative_changes_revenue']), 
     retrieve=extend_schema(
         summary="Obtener una modificación acumulada - ingresos específica", 
         description="Obtiene los detalles de una modificación acumulada - ingresos por su ID", 
-        tags=['Modificaciones Acumuladas - Ingresos']),
+        tags=['cumulative_changes_revenue']),
     
     create=extend_schema(
         summary="Crear una nueva modificación acumulada - ingresos", 
         description="Crea una nueva modificación acumulada - ingresos en el sistema", 
-        tags=['Modificaciones Acumuladas - Ingresos'],
+        tags=['cumulative_changes_revenue'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_revenue_budget': '001-2024-ADM', 'accumulated_additions': '100', 'accumulated_reductions': '100', 'transfer_accumulated_credits': '100', 'transfer_accumulated_countercredits': '100', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una modificación acumulada - ingresos", 
         description="Actualiza completamente una modificación acumulada - ingresos existente", 
-        tags=['Modificaciones Acumuladas - Ingresos']
+        tags=['cumulative_changes_revenue']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una modificación acumulada - ingresos", 
         description="Actualiza uno o más campos de una modificación acumulada - ingresos existente", 
-        tags=['Modificaciones Acumuladas - Ingresos']
+        tags=['cumulative_changes_revenue']
     ),
     destroy=extend_schema(
         summary="Eliminar una modificación acumulada - ingresos", 
         description="Elimina una modificación acumulada - ingresos del sistema",         
-        tags=['Modificaciones Acumuladas - Ingresos']
+        tags=['cumulative_changes_revenue']
     )
 )
 class CumulativeChangesRevenueViewSet(viewsets.ModelViewSet):
@@ -1195,7 +1195,7 @@ class CumulativeChangesRevenueViewSet(viewsets.ModelViewSet):
                 required=True                
             )            
         ],            
-        tags=['Modificaciones Acumuladas - Ingresos']            
+        tags=['cumulative_changes_revenue']            
     )            
     @action(detail=False, methods=['get'])            
     def search_by_code(self, request):                
@@ -1210,33 +1210,33 @@ class CumulativeChangesRevenueViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las ejecuciones de ingresos",
         description="Obtiene una lista de todas las ejecuciones de ingresos registradas en el sistema",
-        tags=['Ejecución de Ingresos']),
+        tags=['revenue_execution']),
     
     retrieve=extend_schema(
         summary="Obtener una ejecución de ingresos específica",
         description="Obtiene los detalles de una ejecución de ingresos por su ID",
-        tags=['Ejecución de Ingresos']),
+        tags=['revenue_execution']),
     
     create=extend_schema(
         summary="Crear una nueva ejecución de ingresos",
         description="Crea una nueva ejecución de ingresos en el sistema",
-        tags=['Ejecución de Ingresos'],        
+        tags=['revenue_execution'],        
         examples=[OpenApiExample('Ejemplo de creación', value={'id_revenue_budget': '001-2024-ADM', 'monthly_revenue_value': '100', 'accumulated_revenue': '100', 'income_receivable': '100', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una ejecución de ingresos",
         description="Actualiza completamente una ejecución de ingresos existente",
-        tags=['Ejecución de Ingresos']
+        tags=['revenue_execution']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una ejecución de ingresos",
         description="Actualiza uno o más campos de una ejecución de ingresos existente",
-        tags=['Ejecución de Ingresos']
+        tags=['revenue_execution']
     ),
     destroy=extend_schema(
         summary="Eliminar una ejecución de ingresos",
         description="Elimina una ejecución de ingresos del sistema",
-        tags=['Ejecución de Ingresos']
+        tags=['revenue_execution']
     )
 )
 class RevenueExecutionViewSet(viewsets.ModelViewSet):
@@ -1266,7 +1266,7 @@ class RevenueExecutionViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Ejecución de Ingresos']
+        tags=['revenue_execution']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -1283,30 +1283,30 @@ class RevenueExecutionViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todos los presupuestos de gastos",
         description="Obtiene una lista de todos los presupuestos de gastos registrados en el sistema",
-        tags=['Presupuesto de Gastos']),    
+        tags=['expenses_budget']),    
     retrieve=extend_schema(
         summary="Obtener un presupuesto de gastos específico",
         description="Obtiene los detalles de un presupuesto de gastos por su ID",
-        tags=['Presupuesto de Gastos']),
+        tags=['expenses_budget']),
     create=extend_schema(
         summary="Crear un nuevo presupuesto de gastos",
         description="Crea un nuevo presupuesto de gastos en el sistema",
-        tags=['Presupuesto de Gastos'],
+        tags=['expenses_budget'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_institution': '001-2024-ADM', 'id_budget_item_expenses': '001-2024-ADM', 'period': 'Trimestral', 'initial_appropriation': '100', 'final_appropriation': '100', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     update=extend_schema(
         summary="Actualizar un presupuesto de gastos",
         description="Actualiza completamente un presupuesto de gastos existente",
-        tags=['Presupuesto de Gastos']
+        tags=['expenses_budget']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente un presupuesto de gastos",
         description="Actualiza uno o más campos de un presupuesto de gastos existente",
-        tags=['Presupuesto de Gastos']
+        tags=['expenses_budget']
     ),
     destroy=extend_schema(
         summary="Eliminar un presupuesto de gastos",
         description="Elimina un presupuesto de gastos del sistema",
-        tags=['Presupuesto de Gastos']
+        tags=['expenses_budget']
     )
 )
 class ExpensesBudgetViewSet(viewsets.ModelViewSet):
@@ -1336,7 +1336,7 @@ class ExpensesBudgetViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Presupuesto de Gastos']
+        tags=['expenses_budget']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -1351,33 +1351,33 @@ class ExpensesBudgetViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las modificaciones del periodo - gastos",
         description="Obtiene una lista de todas las modificaciones del periodo - gastos registradas en el sistema",
-        tags=['Modificaciones del Periodo - Gastos']),
+        tags=['changes_expenses_period']),
     
     retrieve=extend_schema(
         summary="Obtener una modificación del periodo - gastos específica",
         description="Obtiene los detalles de una modificación del periodo - gastos por su ID",
-        tags=['Modificaciones del Periodo - Gastos']),
+        tags=['changes_expenses_period']),
     
     create=extend_schema(
         summary="Crear una nueva modificación del periodo - gastos",
         description="Crea una nueva modificación del periodo - gastos en el sistema",
-        tags=['Modificaciones del Periodo - Gastos'],
+        tags=['changes_expenses_period'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_budget_item_expenses': '001-2024-ADM', 'addition': '100', 'reduction': '100', 'credits': '100', 'countercredits': '100', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una modificación del periodo - gastos",
         description="Actualiza completamente una modificación del periodo - gastos existente",
-        tags=['Modificaciones del Periodo - Gastos']
+        tags=['changes_expenses_period']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una modificación del periodo - gastos",
         description="Actualiza uno o más campos de una modificación del periodo - gastos existente",
-        tags=['Modificaciones del Periodo - Gastos']
+        tags=['changes_expenses_period']
     ),
     destroy=extend_schema(
         summary="Eliminar una modificación del periodo - gastos",
         description="Elimina una modificación del periodo - gastos del sistema",
-        tags=['Modificaciones del Periodo - Gastos']
+        tags=['changes_expenses_period']
     )
 )
 class ChangesExpensesPeriodViewSet(viewsets.ModelViewSet):
@@ -1407,7 +1407,7 @@ class ChangesExpensesPeriodViewSet(viewsets.ModelViewSet):
                 required=True
             )
         ],
-        tags=['Modificaciones del Periodo - Gastos']
+        tags=['changes_expenses_period']
     )
     @action(detail=False, methods=['get'])
     def search_by_code(self, request):
@@ -1422,32 +1422,32 @@ class ChangesExpensesPeriodViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las modificaciones acumuladas - gastos",
         description="Obtiene una lista de todas las modificaciones acumuladas - gastos registradas en el sistema",
-        tags=['Modificaciones Acumuladas - Gastos']), 
+        tags=['cumulative_changes_expenses']), 
     retrieve=extend_schema(
         summary="Obtener una modificación acumulada - gastos específica", 
         description="Obtiene los detalles de una modificación acumulada - gastos por su ID", 
-        tags=['Modificaciones Acumuladas - Gastos']),
+        tags=['cumulative_changes_expenses']),
     
     create=extend_schema(
         summary="Crear una nueva modificación acumulada - gastos", 
         description="Crea una nueva modificación acumulada - gastos en el sistema", 
-        tags=['Modificaciones Acumuladas - Gastos'],
+        tags=['cumulative_changes_expenses'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_budget_item_expenses': '001-2024-ADM', 'accumulated_additions': '100', 'accumulated_reductions': '100', 'accumulated_credits': '100', 'accumulated_custordis': '100', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una modificación acumulada - gastos", 
         description="Actualiza completamente una modificación acumulada - gastos existente", 
-        tags=['Modificaciones Acumuladas - Gastos']
+        tags=['cumulative_changes_expenses']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una modificación acumulada - gastos", 
         description="Actualiza uno o más campos de una modificación acumulada - gastos existente", 
-        tags=['Modificaciones Acumuladas - Gastos']
+        tags=['cumulative_changes_expenses']
     ),
     destroy=extend_schema(
         summary="Eliminar una modificación acumulada - gastos", 
         description="Elimina una modificación acumulada - gastos del sistema",         
-        tags=['Modificaciones Acumuladas - Gastos']
+        tags=['cumulative_changes_expenses']
     )
 )
 class CumulativeChangesExpensesViewSet(viewsets.ModelViewSet):
@@ -1477,7 +1477,7 @@ class CumulativeChangesExpensesViewSet(viewsets.ModelViewSet):
                 required=True                
             )            
         ],            
-        tags=['Modificaciones Acumuladas - Gastos']            
+        tags=['cumulative_changes_expenses']            
     )            
     @action(detail=False, methods=['get'])            
     def search_by_code(self, request):                
@@ -1492,33 +1492,33 @@ class CumulativeChangesExpensesViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las ejecuciones de gastos",
         description="Obtiene una lista de todas las ejecuciones de gastos registradas en el sistema",
-        tags=['Ejecución de Gastos']),
+        tags=['expenses_execution']),
     
     retrieve=extend_schema(
         summary="Obtener una ejecución de gastos específica",
         description="Obtiene los detalles de una ejecución de gastos por su ID",
-        tags=['Ejecución de Gastos']),
+        tags=['expenses_execution']),
     
     create=extend_schema(
         summary="Crear una nueva ejecución de gastos",
         description="Crea una nueva ejecución de gastos en el sistema",
-        tags=['Ejecución de Gastos'],
+        tags=['expenses_execution'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_budget_item_expenses': '001-2024-ADM', 'id_institution': '001-2024-ADM', 'id_budget_report': '001-2024-ADM', 'program_code': '001-2024-ADM', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una ejecución de gastos",
         description="Actualiza completamente una ejecución de gastos existente",
-        tags=['Ejecución de Gastos']
+        tags=['expenses_execution']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una ejecución de gastos",
         description="Actualiza uno o más campos de una ejecución de gastos existente",
-        tags=['Ejecución de Gastos']
+        tags=['expenses_execution']
     ),
     destroy=extend_schema(
         summary="Eliminar una ejecución de gastos",
         description="Elimina una ejecución de gastos del sistema",
-        tags=['Ejecución de Gastos']
+        tags=['expenses_execution']
     )
 )
 class ExpensesExecutionViewSet(viewsets.ModelViewSet):
@@ -1548,7 +1548,7 @@ class ExpensesExecutionViewSet(viewsets.ModelViewSet):
                 required=True                
             )            
         ],            
-        tags=['Ejecución de Gastos']            
+        tags=['expenses_execution']            
     )            
     @action(detail=False, methods=['get'])            
     def search_by_code(self, request):                
@@ -1563,33 +1563,33 @@ class ExpensesExecutionViewSet(viewsets.ModelViewSet):
     list=extend_schema(
         summary="Listar todas las obligaciones de pago",
         description="Obtiene una lista de todas las obligaciones de pago registradas en el sistema",
-        tags=['Obligaciones de Pago']),
+        tags=['payment_obligations']),
     
     retrieve=extend_schema(
         summary="Obtener una obligación de pago específica",
         description="Obtiene los detalles de una obligación de pago por su ID",
-        tags=['Obligaciones de Pago']),
+        tags=['payment_obligations']),
     
     create=extend_schema(
         summary="Crear una nueva obligación de pago",
         description="Crea una nueva obligación de pago en el sistema",
-        tags=['Obligaciones de Pago'],
+        tags=['payment_obligations'],
         examples=[OpenApiExample('Ejemplo de creación', value={'id_budget_item_expenses': '001-2024-ADM', 'id_institution': '001-2024-ADM', 'id_budget_report': '001-2024-ADM', 'open_positions': '100', 'obligations_period': '100', 'accumulated_obligations': '100', 'period_payments': '100', 'accumulated_payments': '100', 'balance_payable': '100', 'reservations': '100', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),
     
     update=extend_schema(
         summary="Actualizar una obligación de pago",
         description="Actualiza completamente una obligación de pago existente",
-        tags=['Obligaciones de Pago']
+        tags=['payment_obligations']
     ),
     partial_update=extend_schema(
         summary="Actualizar parcialmente una obligación de pago",
         description="Actualiza uno o más campos de una obligación de pago existente",
-        tags=['Obligaciones de Pago']
+        tags=['payment_obligations']
     ),
     destroy=extend_schema(
         summary="Eliminar una obligación de pago",
         description="Elimina una obligación de pago del sistema",
-        tags=['Obligaciones de Pago']
+        tags=['payment_obligations']
     )
 )
 class PaymentObligationsViewSet(viewsets.ModelViewSet):
@@ -1619,7 +1619,7 @@ class PaymentObligationsViewSet(viewsets.ModelViewSet):
                 required=True                
             )            
         ],            
-        tags=['Obligaciones de Pago']            
+        tags=['payment_obligations']            
     )            
     @action(detail=False, methods=['get'])            
     def search_by_code(self, request):                
@@ -1634,33 +1634,33 @@ class PaymentObligationsViewSet(viewsets.ModelViewSet):
     list=extend_schema(        
         summary="Listar todas las relaciones de pago",
         description="Obtiene una lista de todas las relaciones de pago registradas en el sistema",
-        tags=['Relaciones de Pago']),    
+        tags=['payment_relationship']),    
     
     retrieve=extend_schema(
         summary="Obtener una relación de pago específica",
         description="Obtiene los detalles de una relación de pago por su ID",
-        tags=['Relaciones de Pago']),    
+        tags=['payment_relationship']),    
     
     create=extend_schema(
         summary="Crear una nueva relación de pago",
         description="Crea una nueva relación de pago en el sistema",
-        tags=['Relaciones de Pago'],        
+        tags=['payment_relationship'],        
         examples=[OpenApiExample('Ejemplo de creación', value={'id_payment_obligation': '001-2024-ADM', 'id_institution': '001-2024-ADM', 'id_budget_report': '001-2024-ADM', 'program_code': '001-2024-ADM', 'created_at': '2024-01-01', 'updated_at': '2024-01-01'}, request_only=True)]),  
       
     update=extend_schema(   
         summary="Actualizar una relación de pago",
         description="Actualiza completamente una relación de pago existente",
-        tags=['Relaciones de Pago']),
+        tags=['payment_relationship']),
         
     partial_update=extend_schema(
         summary="Actualizar parcialmente una relación de pago",
         description="Actualiza uno o más campos de una relación de pago existente",
-        tags=['Relaciones de Pago']
+        tags=['payment_relationship']
     ),    
     destroy=extend_schema(
         summary="Eliminar una relación de pago",
         description="Elimina una relación de pago del sistema",
-        tags=['Relaciones de Pago']
+        tags=['payment_relationship']
     )
 )
 class PaymentRelationshipViewSet(viewsets.ModelViewSet):
@@ -1690,7 +1690,7 @@ class PaymentRelationshipViewSet(viewsets.ModelViewSet):
                 required=True                
             )            
         ],            
-        tags=['Relaciones de Pago']            
+        tags=['payment_relationship']            
     )            
     @action(detail=False, methods=['get'])            
     def search_by_code(self, request):                
