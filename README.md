@@ -40,11 +40,11 @@ docker-compose exec backend python manage.py createsuperuser
 ## Documentación de la API
 
 - Documentación interactiva (Scalar UI):  
-  [http://127.0.0.1:8000/scalar/](http://127.0.0.1:8000/api/scalar)
+  [http://127.0.0.1:8000/scalar/](http://127.0.0.1:8000/scalar)
 - Documentación interactiva (Swagger UI):  
-  [http://127.0.0.1:8000/swagger/](http://127.0.0.1:8000/api/swagger)
+  [http://127.0.0.1:8000/swagger/](http://127.0.0.1:8000/swagger)
 - Documentación interactiva (ReDoc):
-  [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/api/redoc)
+  [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/redoc)
 - Interfaz Django REST Framework:  
   [http://127.0.0.1:8000/api/](http://127.0.0.1:8000/api/)
 
