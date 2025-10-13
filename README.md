@@ -27,11 +27,11 @@ cd Fondos_SED
 docker-compose up -d --build 
 ```
 
-### 3. Crear superusuario para acceder al panel de administración
+### 3. Crear superusuario de acceso al panel de administración
 ```bash
 docker-compose exec backend python manage.py createsuperuser
 ```
-### 2.3 Para acceder al panel de administración
+### Acceso al panel de administración
 - En el navegador web, acceder a la siguiente URL:  
 [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin)
 
@@ -43,6 +43,7 @@ docker-compose exec backend python manage.py createsuperuser
   [http://127.0.0.1:8000/scalar/](http://127.0.0.1:8000/api/scalar)
 - Documentación interactiva (Swagger UI):  
   [http://127.0.0.1:8000/swagger/](http://127.0.0.1:8000/api/swagger)
+- Documentación interactiva (ReDoc):
   [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/api/redoc)
 - Interfaz Django REST Framework:  
   [http://127.0.0.1:8000/api/](http://127.0.0.1:8000/api/)
