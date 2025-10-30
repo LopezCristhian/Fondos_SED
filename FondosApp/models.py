@@ -409,3 +409,16 @@ class PaymentRelationship(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+# Catalogo de cuentas
+class AccountCatalog(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    code = models.CharField(max_length=100, verbose_name="Código", help_text="Código de la cuenta")
+    name = models.CharField(max_length=100, verbose_name="Nombre", help_text="Nombre de la cuenta")
+    nature = models.CharField(max_length=100, verbose_name="Naturaleza", help_text="Naturaleza de la cuenta")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
+
+    def __str__(self):
+        return f'{self.code} - {self.name} - {self.nature}'
+        
