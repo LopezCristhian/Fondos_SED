@@ -13,7 +13,7 @@ class Institution(models.Model):
     def __str__(self):
         return f'{self.name}'
     
-# Perido de reporte de información presupuestal
+# Periodo de reporte de información presupuestal
 class BudgetReport(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     period_type = models.CharField(max_length=20,  choices=(('Semestral', 'Semestral'), ('Trimestral', 'Trimestral'), ('Mensual', 'Mensual')), verbose_name="Tipo de periodo", help_text="Tipo de periodo")
