@@ -413,18 +413,19 @@ class PaymentRelationship(models.Model):
 # Catalogo de cuentas
 class F1ChartOfAccounts(models.Model):
     id_detail_f1 = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id_institution = models.ForeignKey(Institution, on_delete=models.PROTECT, verbose_name="Institución", help_text="Institución asociada")
     id_report = models.ForeignKey(BudgetReport, on_delete=models.PROTECT, verbose_name="Período de reporte", help_text="Período de reporte asociado")
     id_account = models.ForeignKey(AccountantPuc, on_delete=models.PROTECT, verbose_name="Cuenta PUC", help_text="Cuenta del plan contable PUC asociada")
-    previous_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo Anterior", help_text="Saldo anterior")
-    debit = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Débito", help_text="Débito")
-    credit = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Crédito", help_text="Crédito")
-    current_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo Actual", help_text="Saldo actual")
-    no_current_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo No Corriente", help_text="Saldo no corriente")
+    previous_balance = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Saldo Anterior", help_text="Saldo anterior")
+    debit = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Débito", help_text="Débito")
+    credit = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Crédito", help_text="Crédito")
+    current_balance = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Saldo Corriente", help_text="Saldo corriente")
+    no_current_balance = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Saldo No Corriente", help_text="Saldo no corriente")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
     
     def __str__(self):
-        return f'{self.id_report} - {self.id_account}'
+        return f'{self.id_institution} - {self.id_report} - {self.id_account}'
 
 # Modelo cuentas de banco
 
