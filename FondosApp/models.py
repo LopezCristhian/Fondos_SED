@@ -94,12 +94,12 @@ class SourceResources(models.Model):
 # Modelo de bancos
 class Bank(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    bank_name = models.CharField(max_length=100, verbose_name="Nombre Banco", help_text="Nombre del banco")
+    name = models.CharField(max_length=100, verbose_name="Nombre del Banco", help_text="Nombre del banco")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
     
     def __str__(self):
-        return f'{self.bank_name}'
+        return self.name
 
 # Modelo de ejecución presupuestal de gastos e ingresos F7
 class F7BudgetExecutionExpenses(models.Model):
@@ -426,7 +426,49 @@ class F1ChartOfAccounts(models.Model):
     def __str__(self):
         return f'{self.id_report} - {self.id_account}'
 
-# 
+# Modelo cuentas de banco
+
+class AccountPurpose(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    description = models.CharField(max_length=200, verbose_name="Descripción", help_text="Descripción del propósito de la cuenta")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
+
+    def __str__(self):
+        return self.description
+
+class BankAccount(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id_institution = models.ForeignKey(Institution, on_delete=models.PROTECT, verbose_name="Institución", help_text="Institución asociada")
+    bank = models.ForeignKey(Bank, on_delete=models.PROTECT, verbose_name="Banco", help_text="Banco asociado")
+    accounting_code = models.ForeignKey(AccountantPuc, on_delete=models.PROTECT, verbose_name="Código Contable", help_text="Código contable del PUC")
+    account_number = models.CharField(max_length=50, verbose_name="Número de Cuenta", help_text="Número de cuenta bancaria")
+    purpose = models.ForeignKey(AccountPurpose, on_delete=models.PROTECT, null=True, blank=True, verbose_name="Propósito", help_text="Propósito o finalidad de la cuenta")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
+
+    def __str__(self):
+        return f"{self.bank.name} - {self.account_number}"
+
+class F3BankAccountReport(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    bank_account = models.ForeignKey(BankAccount, on_delete=models.PROTECT, verbose_name="Cuenta Bancaria", help_text="Cuenta bancaria asociada")
+    id_report = models.ForeignKey(BudgetReport, on_delete=models.PROTECT, verbose_name="Período de reporte", help_text="Período de reporte asociado")
+    incomes = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Ingresos", help_text="Ingresos del período")
+    # expenses = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Egresos", help_text="Egresos del período")
+    accounting_book_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo Libro Contable", help_text="Saldo según libro contable")
+    bank_statement_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo Extracto Bancario", help_text="Saldo según extracto bancario")
+    treasury_book_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo Libro Tesorería", help_text="Saldo según libro de tesorería")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
+
+    def __str__(self):
+        return f"{self.bank_account.account_number} - {self.id_report}"
+
+    
+
+
+
 
 
 
