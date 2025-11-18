@@ -444,29 +444,66 @@ class BankAccount(models.Model):
     bank = models.ForeignKey(Bank, on_delete=models.PROTECT, verbose_name="Banco", help_text="Banco asociado")
     accounting_code = models.ForeignKey(AccountantPuc, on_delete=models.PROTECT, verbose_name="Código Contable", help_text="Código contable del PUC")
     account_number = models.CharField(max_length=50, verbose_name="Número de Cuenta", help_text="Número de cuenta bancaria")
-    purpose = models.ForeignKey(AccountPurpose, on_delete=models.PROTECT, null=True, blank=True, verbose_name="Propósito", help_text="Propósito o finalidad de la cuenta")
+    purpose = models.ForeignKey(AccountPurpose, on_delete=models.PROTECT, verbose_name="Destinación de la Cuenta", help_text="Destinación o finalidad de la cuenta")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
 
     def __str__(self):
-        return f"{self.bank.name} - {self.account_number}"
+        return f"{self.bank.name} - {self.account_number} ({self.id_institution.name})"
 
 class F3BankAccountReport(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     bank_account = models.ForeignKey(BankAccount, on_delete=models.PROTECT, verbose_name="Cuenta Bancaria", help_text="Cuenta bancaria asociada")
     id_report = models.ForeignKey(BudgetReport, on_delete=models.PROTECT, verbose_name="Período de reporte", help_text="Período de reporte asociado")
-    incomes = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Ingresos", help_text="Ingresos del período")
-    # expenses = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Egresos", help_text="Egresos del período")
-    accounting_book_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo Libro Contable", help_text="Saldo según libro contable")
-    bank_statement_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo Extracto Bancario", help_text="Saldo según extracto bancario")
-    treasury_book_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo Libro Tesorería", help_text="Saldo según libro de tesorería")
+    incomes = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Ingresos", help_text="Ingresos del período")
+    accounting_book_balance = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Saldo Libro de Contabilidad", help_text="Saldo según libro contable")
+    bank_statement_balance = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Saldo Extracto Bancario", help_text="Saldo según extracto bancario")
+    treasury_book_balance = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Saldo Libro Tesorería", help_text="Saldo según libro de tesorería")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
 
     def __str__(self):
-        return f"{self.bank_account.account_number} - {self.id_report}"
+        return f"{self.bank_account.bank.name} - {self.bank_account.account_number} - {self.id_report}"
 
+# Modelo de entidades aseguradoras y pólizas de aseguramiento (Queda pendiente definir detalles)
+
+class InsuranceCompany(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=200, unique=True, verbose_name="Entidad Aseguradora", help_text="Nombre de la entidad aseguradora")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
     
+    def __str__(self):
+        return self.name
+
+
+class F4InsurancePolicy(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id_institution = models.ForeignKey(Institution, on_delete=models.PROTECT, verbose_name="Institución", help_text="Institución asociada")
+    id_report = models.ForeignKey(BudgetReport, on_delete=models.PROTECT, verbose_name="Período de reporte", help_text="Período de reporte asociado")
+    insurance_company = models.ForeignKey(InsuranceCompany, on_delete=models.PROTECT, verbose_name="Entidad Aseguradora", help_text="Entidad aseguradora")
+    policy_number = models.CharField(max_length=50, verbose_name="Número de Póliza", help_text="Número de póliza")
+    initial_validity = models.DateField(verbose_name="Vigencia Inicial de Póliza", help_text="Fecha de inicio de vigencia")
+    final_validity = models.DateField(verbose_name="Vigencia Final de Póliza", help_text="Fecha de fin de vigencia")
+    insured_risk = models.CharField(max_length=250, verbose_name="Interés o Riesgo Asegurado", help_text="Interés o riesgo asegurado")
+    policyholder = models.CharField(max_length=200, verbose_name="Tomador", help_text="Tomador de la póliza")
+    # department = models.CharField(max_length=200, verbose_name="Dependencia", help_text="Dependencia") REVISAR
+    position = models.CharField(max_length=200, verbose_name="Cargo", help_text="Cargo")
+    insured = models.CharField(max_length=250, verbose_name="Asegurado", help_text="Asegurado")
+    coverage_type = models.CharField(max_length=200, verbose_name="Tipo de Amparo", help_text="Tipo de amparo")
+    insured_value = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Valor Asegurado", help_text="Valor asegurado")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
+    
+    def __str__(self):
+        return f"{self.insurance_company.name} - Póliza {self.policy_number} - {self.id_institution.name}"
+
+# Modelo de Propiedad,planta y equipo, adquisiciones y bajas
+
+
+
+
+
 
 
 
