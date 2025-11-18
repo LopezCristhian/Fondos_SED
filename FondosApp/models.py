@@ -411,14 +411,23 @@ class PaymentRelationship(models.Model):
         return str(self.id)
 
 # Catalogo de cuentas
-class AccountCatalog(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    code = models.CharField(max_length=100, verbose_name="Código", help_text="Código de la cuenta")
-    name = models.CharField(max_length=100, verbose_name="Nombre", help_text="Nombre de la cuenta")
-    nature = models.CharField(max_length=100, verbose_name="Naturaleza", help_text="Naturaleza de la cuenta")
+class F1ChartOfAccounts(models.Model):
+    id_detail_f1 = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id_report = models.ForeignKey(BudgetReport, on_delete=models.PROTECT, verbose_name="Período de reporte", help_text="Período de reporte asociado")
+    id_account = models.ForeignKey(AccountantPuc, on_delete=models.PROTECT, verbose_name="Cuenta PUC", help_text="Cuenta del plan contable PUC asociada")
+    previous_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo Anterior", help_text="Saldo anterior")
+    debit = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Débito", help_text="Débito")
+    credit = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Crédito", help_text="Crédito")
+    current_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo Actual", help_text="Saldo actual")
+    no_current_balance = models.DecimalField(max_digits=14, decimal_places=2, verbose_name="Saldo No Corriente", help_text="Saldo no corriente")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
-
+    
     def __str__(self):
-        return f'{self.code} - {self.name} - {self.nature}'
+        return f'{self.id_report} - {self.id_account}'
+
+# 
+
+
+
         
