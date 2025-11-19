@@ -498,7 +498,96 @@ class F4InsurancePolicy(models.Model):
     def __str__(self):
         return f"{self.insurance_company.name} - Póliza {self.policy_number} - {self.id_institution.name}"
 
-# Modelo de Propiedad,planta y equipo, adquisiciones y bajas
+# Modelo de Propiedad, planta y equipo, adquisiciones y bajas F5A
+class F5PropertyPlantEquipment(models.Model):
+    CONCEPT_CHOICES = [
+        ('ADQUISICION', 'Adquisición'),
+        ('BAJA', 'Baja'),
+    ]
+    
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id_institution = models.ForeignKey(Institution, on_delete=models.PROTECT, verbose_name="Institución", help_text="Institución asociada")
+    id_report = models.ForeignKey(BudgetReport, on_delete=models.PROTECT, verbose_name="Período de reporte", help_text="Período de reporte asociado")
+    transaction_date = models.DateField(verbose_name="Fecha de Adquisición o Baja", help_text="Fecha de la transacción")
+    concept = models.CharField(max_length=20, choices=CONCEPT_CHOICES, verbose_name="Concepto", help_text="Tipo de movimiento (Adquisición o Baja)")
+    value = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Valor", help_text="Valor de la transacción")
+    detail = models.TextField(verbose_name="Detalle", help_text="Descripción detallada del elemento")
+    accounting_code = models.ForeignKey(AccountantPuc, on_delete=models.PROTECT, verbose_name="Código Contable", help_text="Código contable del PUC")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
+    
+    def __str__(self):
+        return f"{self.concept} - {self.accounting_code.code} - {self.transaction_date} - {self.id_institution.name}"
+
+# Modelo de inventario de Propiedad, planta y equipo F5B
+class F5BPropertyInventory(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id_institution = models.ForeignKey(Institution, on_delete=models.PROTECT, verbose_name="Institución", help_text="Institución asociada")
+    id_report = models.ForeignKey(BudgetReport, on_delete=models.PROTECT, verbose_name="Período de reporte", help_text="Período de reporte asociado")
+    accounting_code = models.ForeignKey(AccountantPuc, on_delete=models.PROTECT, verbose_name="Código Contable", help_text="Código contable del PUC")
+    initial_balance = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Saldo Inicial", help_text="Saldo inicial del período")
+    entries = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Entradas", help_text="Entradas o adquisiciones del período")
+    exits = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Salidas", help_text="Salidas o bajas del período")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
+    
+    class Meta:
+        db_table = 'f5b_property_inventory'
+        verbose_name = 'F5B - Inventario de Propiedad, Planta y Equipo'
+        verbose_name_plural = 'F5B - Inventario de Propiedad, Planta y Equipo'
+        unique_together = [['id_institution', 'id_report', 'accounting_code']]
+        ordering = ['id_report', 'accounting_code__code']
+    
+    @property
+    def final_balance(self):
+        """Calcula el saldo final: Saldo Inicial + Entradas - Salidas"""
+        return self.initial_balance + self.entries - self.exits
+    
+    def __str__(self):
+        return f"{self.accounting_code.code} - {self.accounting_code.name} - {self.id_report}"
+
+# Modelo de ejecución presupuestal de ingresos F6
+class F6RevenueExecution(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id_institution = models.ForeignKey(Institution, on_delete=models.PROTECT, verbose_name="Institución", help_text="Institución asociada")
+    id_report = models.ForeignKey(BudgetReport, on_delete=models.PROTECT, verbose_name="Período de reporte", help_text="Período de reporte asociado")
+    budget_item_revenue = models.ForeignKey(BudgetItemRevenue, on_delete=models.PROTECT, verbose_name="Rubro Presupuestal de Ingresos", help_text="Rubro presupuestal de ingresos")
+    initial_budget = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Presupuesto Inicial", help_text="Presupuesto inicial del período")
+    additions = models.DecimalField(max_digits=15, decimal_places=2, default=0, verbose_name="Adiciones", help_text="Adiciones al presupuesto")
+    reductions = models.DecimalField(max_digits=15, decimal_places=2, default=0, verbose_name="Reducciones", help_text="Reducciones al presupuesto")
+    collection = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Recaudo", help_text="Recaudo efectivo del período")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
+    
+    class Meta:
+        db_table = 'f6_revenue_execution'
+        verbose_name = 'F6 - Ejecución Presupuestal de Ingresos'
+        verbose_name_plural = 'F6 - Ejecución Presupuestal de Ingresos'
+        unique_together = [['id_institution', 'id_report', 'budget_item_revenue']]
+        ordering = ['id_report', 'budget_item_revenue__code']
+    
+    @property
+    def final_budget(self):
+        """Calcula el presupuesto final: Presupuesto Inicial + Adiciones - Reducciones"""
+        return self.initial_budget + self.additions - self.reductions
+    
+    @property
+    def execution_percentage(self):
+        """Calcula el porcentaje de ejecución: (Recaudo / Presupuesto Final) * 100"""
+        final = self.final_budget
+        if final > 0:
+            return (self.collection / final) * 100
+        return 0
+    
+    def __str__(self):
+        return f"{self.budget_item_revenue.code} - {self.budget_item_revenue.account_name} - {self.id_report}"
+
+
+
+
+
+
+
 
 
 
