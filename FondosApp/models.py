@@ -13,7 +13,7 @@ class Institution(models.Model):
     def __str__(self):
         return f'{self.name}'
     
-# Perido de reporte de información presupuestal
+# Periodo de reporte de información presupuestal
 class BudgetReport(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     period_type = models.CharField(max_length=20,  choices=(('Semestral', 'Semestral'), ('Trimestral', 'Trimestral'), ('Mensual', 'Mensual')), verbose_name="Tipo de periodo", help_text="Tipo de periodo")
@@ -63,7 +63,7 @@ class AccountantPuc(models.Model):
     nature = models.CharField(max_length=100, verbose_name="Naturaleza", help_text="Naturaleza del plan contable") # Debito o Credito
     father = models.CharField(max_length=100, blank=True, null=True, verbose_name="Padre", help_text="Padre del plan contable")
     type = models.CharField(max_length=100, verbose_name="Tipo", help_text="Tipo del plan contable") # General o Detalle
-    level = models.IntegerField(blank=True, null=True, verbose_name="Nivel", help_text="Nivel del plan contable")
+    level = models.CharField(max_length=100, verbose_name="Nivel", help_text="Nivel del plan contable")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación", help_text="Fecha de creación")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización", help_text="Fecha de actualización")
     
