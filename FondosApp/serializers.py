@@ -23,8 +23,16 @@ from .models import (
     CumulativeChangesExpenses,
     ExpensesExecution,
     PaymentObligations,
-    PaymentRelationship
-    
+    PaymentRelationship,
+    F1ChartOfAccounts,
+    AccountPurpose,
+    BankAccount,
+    F3BankAccountReport,
+    InsuranceCompany,
+    F4InsurancePolicy,
+    F5PropertyPlantEquipment,
+    F5BPropertyInventory,
+    F6RevenueExecution
 )
 
 # Serializer para modelo de instituciones
@@ -432,3 +440,208 @@ class PaymentRelationshipSerializer(serializers.ModelSerializer):
             if not value.strip():
                 raise serializers.ValidationError("El código de presupuesto no puede estar vacío")
             return value
+
+# Serializer para F1 - Catálogo de Cuentas
+class F1ChartOfAccountsSerializer(serializers.ModelSerializer):
+    """
+    Serializer para el formato F1 - Catálogo de Cuentas.
+    Incluye información relacionada de la cuenta PUC.
+    """
+    # Campos de solo lectura para mostrar información completa
+    account_code = serializers.CharField(source='id_account.code', read_only=True)
+    account_name = serializers.CharField(source='id_account.name', read_only=True)
+    institution_name = serializers.CharField(source='id_institution.name', read_only=True)
+    report_period = serializers.CharField(source='id_report.__str__', read_only=True)
+    
+    class Meta:
+        model = F1ChartOfAccounts
+        fields = '__all__'
+        read_only_fields = ['id_detail_f1', 'created_at', 'updated_at']
+    
+    def validate(self, data):
+        """Validación de integridad de saldos"""
+        if 'debit' in data and 'credit' in data:
+            if data['debit'] < 0:
+                raise serializers.ValidationError("El débito no puede ser negativo")
+            if data['credit'] < 0:
+                raise serializers.ValidationError("El crédito no puede ser negativo")
+        return data
+
+# Serializer para propósito de cuenta bancaria
+class AccountPurposeSerializer(serializers.ModelSerializer):
+    """
+    Serializer para el propósito o destinación de cuentas bancarias.
+    """
+    
+    class Meta:
+        model = AccountPurpose
+        fields = '__all__'
+        read_only_fields = ['id', 'created_at', 'updated_at']
+
+# Serializer para cuentas bancarias
+class BankAccountSerializer(serializers.ModelSerializer):
+    """
+    Serializer para cuentas bancarias.
+    Incluye información relacionada del banco, PUC y propósito.
+    """
+    bank_name = serializers.CharField(source='bank.name', read_only=True)
+    accounting_code_value = serializers.CharField(source='accounting_code.code', read_only=True)
+    accounting_name = serializers.CharField(source='accounting_code.name', read_only=True)
+    purpose_description = serializers.CharField(source='purpose.description', read_only=True)
+    institution_name = serializers.CharField(source='id_institution.name', read_only=True)
+    
+    class Meta:
+        model = BankAccount
+        fields = '__all__'
+        read_only_fields = ['id', 'created_at', 'updated_at']
+    
+    def validate_account_number(self, value):
+        """Valida que el número de cuenta no esté vacío"""
+        if not value.strip():
+            raise serializers.ValidationError("El número de cuenta no puede estar vacío")
+        return value
+
+# Serializer para F3 - Reporte de Cuentas Bancarias
+class F3BankAccountReportSerializer(serializers.ModelSerializer):
+    """
+    Serializer para el formato F3 - Cuentas Bancarias.
+    Incluye información completa de la cuenta bancaria.
+    """
+    # Información de la cuenta bancaria
+    bank_name = serializers.CharField(source='bank_account.bank.name', read_only=True)
+    account_number = serializers.CharField(source='bank_account.account_number', read_only=True)
+    accounting_code = serializers.CharField(source='bank_account.accounting_code.code', read_only=True)
+    purpose = serializers.CharField(source='bank_account.purpose.description', read_only=True)
+    institution_name = serializers.CharField(source='bank_account.id_institution.name', read_only=True)
+    report_period = serializers.CharField(source='id_report.__str__', read_only=True)
+    
+    class Meta:
+        model = F3BankAccountReport
+        fields = '__all__'
+        read_only_fields = ['id', 'created_at', 'updated_at']
+    
+    def validate(self, data):
+        """Validaciones de integridad"""
+        if 'incomes' in data and data['incomes'] < 0:
+            raise serializers.ValidationError("Los ingresos no pueden ser negativos")
+        return data
+
+# Serializer para entidades aseguradoras
+class InsuranceCompanySerializer(serializers.ModelSerializer):
+    """
+    Serializer para entidades aseguradoras.
+    """
+    
+    class Meta:
+        model = InsuranceCompany
+        fields = '__all__'
+        read_only_fields = ['id', 'created_at', 'updated_at']
+
+# Serializer para F4 - Pólizas de Aseguramiento
+class F4InsurancePolicySerializer(serializers.ModelSerializer):
+    """
+    Serializer para el formato F4 - Pólizas de Aseguramiento.
+    Incluye información de la aseguradora y validaciones de fechas.
+    """
+    insurance_company_name = serializers.CharField(source='insurance_company.name', read_only=True)
+    institution_name = serializers.CharField(source='id_institution.name', read_only=True)
+    report_period = serializers.CharField(source='id_report.__str__', read_only=True)
+    department_display = serializers.CharField(source='get_department_display', read_only=True)
+    
+    class Meta:
+        model = F4InsurancePolicy
+        fields = '__all__'
+        read_only_fields = ['id', 'created_at', 'updated_at']
+    
+    def validate(self, data):
+        """Validaciones de integridad"""
+        if 'initial_validity' in data and 'final_validity' in data:
+            if data['initial_validity'] >= data['final_validity']:
+                raise serializers.ValidationError(
+                    "La fecha de vigencia inicial debe ser anterior a la final"
+                )
+        
+        if 'insured_value' in data and data['insured_value'] <= 0:
+            raise serializers.ValidationError("El valor asegurado debe ser mayor a cero")
+        
+        return data
+
+# Serializer para F5 - Propiedad, Planta y Equipo (movimientos)
+class F5PropertyPlantEquipmentSerializer(serializers.ModelSerializer):
+    """
+    Serializer para el formato F5 - Movimientos de Propiedad, Planta y Equipo.
+    Incluye información de la cuenta contable.
+    """
+    accounting_code_value = serializers.CharField(source='accounting_code.code', read_only=True)
+    accounting_name = serializers.CharField(source='accounting_code.name', read_only=True)
+    institution_name = serializers.CharField(source='id_institution.name', read_only=True)
+    report_period = serializers.CharField(source='id_report.__str__', read_only=True)
+    concept_display = serializers.CharField(source='get_concept_display', read_only=True)
+    
+    class Meta:
+        model = F5PropertyPlantEquipment
+        fields = '__all__'
+        read_only_fields = ['id', 'created_at', 'updated_at']
+    
+    def validate(self, data):
+        """Validaciones de integridad"""
+        if 'value' in data and data['value'] <= 0:
+            raise serializers.ValidationError("El valor debe ser mayor a cero")
+        return data
+
+# Serializer para F5B - Inventario de Propiedad, Planta y Equipo
+class F5BPropertyInventorySerializer(serializers.ModelSerializer):
+    """
+    Serializer para el formato F5B - Inventario de Propiedad, Planta y Equipo.
+    Incluye campo calculado de saldo final.
+    """
+    accounting_code_value = serializers.CharField(source='accounting_code.code', read_only=True)
+    accounting_name = serializers.CharField(source='accounting_code.name', read_only=True)
+    institution_name = serializers.CharField(source='id_institution.name', read_only=True)
+    report_period = serializers.CharField(source='id_report.__str__', read_only=True)
+    final_balance = serializers.DecimalField(max_digits=15, decimal_places=2, read_only=True)
+    
+    class Meta:
+        model = F5BPropertyInventory
+        fields = '__all__'
+        read_only_fields = ['id', 'created_at', 'updated_at']
+    
+    def validate(self, data):
+        """Validaciones de integridad"""
+        if 'initial_balance' in data and data['initial_balance'] < 0:
+            raise serializers.ValidationError("El saldo inicial no puede ser negativo")
+        if 'entries' in data and data['entries'] < 0:
+            raise serializers.ValidationError("Las entradas no pueden ser negativas")
+        if 'exits' in data and data['exits'] < 0:
+            raise serializers.ValidationError("Las salidas no pueden ser negativas")
+        return data
+
+# Serializer para F6 - Ejecución Presupuestal de Ingresos
+class F6RevenueExecutionSerializer(serializers.ModelSerializer):
+    """
+    Serializer para el formato F6 - Ejecución Presupuestal de Ingresos.
+    Incluye campos calculados de presupuesto final y porcentaje de ejecución.
+    """
+    budget_code = serializers.CharField(source='budget_item_revenue.code', read_only=True)
+    budget_name = serializers.CharField(source='budget_item_revenue.account_name', read_only=True)
+    institution_name = serializers.CharField(source='id_institution.name', read_only=True)
+    report_period = serializers.CharField(source='id_report.__str__', read_only=True)
+    final_budget = serializers.DecimalField(max_digits=15, decimal_places=2, read_only=True)
+    execution_percentage = serializers.DecimalField(max_digits=5, decimal_places=2, read_only=True)
+    
+    class Meta:
+        model = F6RevenueExecution
+        fields = '__all__'
+        read_only_fields = ['id', 'created_at', 'updated_at']
+    
+    def validate(self, data):
+        """Validaciones de integridad"""
+        if 'initial_budget' in data and data['initial_budget'] < 0:
+            raise serializers.ValidationError("El presupuesto inicial no puede ser negativo")
+        if 'additions' in data and data['additions'] < 0:
+            raise serializers.ValidationError("Las adiciones no pueden ser negativas")
+        if 'reductions' in data and data['reductions'] < 0:
+            raise serializers.ValidationError("Las reducciones no pueden ser negativas")
+        if 'collection' in data and data['collection'] < 0:
+            raise serializers.ValidationError("El recaudo no puede ser negativo")
+        return data
