@@ -1,6 +1,6 @@
 # Requirements for the project
 
-Django==5.2.7 # Framework backend
+Django==5.2.8 # Framework backend
 Pandas==2.3.3 # Para análisis de datos
 djangorestframework==3.16.1 # Para construir API REST
 drf-spectacular==0.28.0 # Para documentación de API

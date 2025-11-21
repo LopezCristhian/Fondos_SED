@@ -11,6 +11,7 @@ Tener instalado:
 - Python 3.10+
 - pip
 - Git
+- Docker
 
 ---
 

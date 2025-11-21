@@ -1,103 +1,103 @@
 ﻿code;name;nature;father;type;level
-1;ACTIVOS;DEBITO;;General;
-11;EFECTIVO Y EQUIVALENTES AL EFECTIVO;DEBITO;;General;
-1105;CAJA;DEBITO;;General;
+1;ACTIVOS;DEBITO;;General;1
+11;EFECTIVO Y EQUIVALENTES AL EFECTIVO;DEBITO;1;General;2
+1105;CAJA;DEBITO;11;General;3
 110501;Caja principal;DEBITO;1105;Detalle;5
 110502;Caja menor;DEBITO;1105;Detalle;5
-1110;DEPÓSITOS EN INSTITUCIONES FINANCIERAS;DEBITO;;General;
-111005;Cuenta de ahorro-Pagadora;DEBITO;1110;Detalle;0
-111006;Cuenta de ahorro-Recursos propios;DEBITO;1110;Detalle;0
-111007;Cuenta de ahorro-Maestra Gratuidad;DEBITO;1110;Detalle;0
-13;CUENTAS POR COBRAR;DEBITO;;General;
-1316;VENTA DE BIENES;DEBITO;;General;
-131604;Bienes producidos;DEBITO;1316;Detalle;6
-131606;Bienes comercializados;DEBITO;1316;Detalle;6
-1337;TRANSFERENCIAS POR COBRAR;DEBITO;;General;
-133704;Sistema General de Participaciones - Participación para educación;DEBITO;1337;Detalle;7
-133705;Sistema General de Participaciones - Participación para propósito general;DEBITO;1337;Detalle;7
-133707;Sistema General de Participaciones - Programas de alimentación escolar;DEBITO;1337;Detalle;7
-133709;Sistema General de Participaciones - Resguardos indígenas;DEBITO;1337;Detalle;7
-133712;Otras transferencias;DEBITO;1337;Detalle;7
-15;INVENTARIOS;DEBITO;;General;
-1505;BIENES PRODUCIDOS;DEBITO;;General;
+1110;DEPÓSITOS EN INSTITUCIONES FINANCIERAS;DEBITO;11;General;2
+111005;Cuenta de ahorro-Pagadora;DEBITO;1110;Detalle;5
+111006;Cuenta de ahorro-Recursos propios;DEBITO;1110;Detalle;5
+111007;Cuenta de ahorro-Maestra Gratuidad;DEBITO;1110;Detalle;5
+13;CUENTAS POR COBRAR;DEBITO;1;General;2
+1316;VENTA DE BIENES;DEBITO;13;General;3
+131604;Bienes producidos;DEBITO;1316;Detalle;5
+131606;Bienes comercializados;DEBITO;1316;Detalle;5
+1337;TRANSFERENCIAS POR COBRAR;DEBITO;13;General;3
+133704;Sistema General de Participaciones - Participación para educación;DEBITO;1337;Detalle;5
+133705;Sistema General de Participaciones - Participación para propósito general;DEBITO;1337;Detalle;5
+133707;Sistema General de Participaciones - Programas de alimentación escolar;DEBITO;1337;Detalle;5
+133709;Sistema General de Participaciones - Resguardos indígenas;DEBITO;1337;Detalle;5
+133712;Otras transferencias;DEBITO;1337;Detalle;5
+15;INVENTARIOS;DEBITO;1;General;2
+1505;BIENES PRODUCIDOS;DEBITO;15;General;3
 150502;Construcciones;DEBITO;1505;Detalle;5
 150506;Impresos y publicaciones;DEBITO;1505;Detalle;5
 150543;Productos agropecuarios, de silvicultura, avicultura y pesca;DEBITO;1505;Detalle;5
 150590;Otros bienes producidos;DEBITO;1505;Detalle;5
-1510;MERCANCÍAS EN EXISTENCIA;DEBITO;;General;
-151002;Terrenos;DEBITO;1510;Detalle;0
-151003;Construcciones;DEBITO;1510;Detalle;0
-151004;Impresos y publicaciones;DEBITO;1510;Detalle;0
-151012;Semovientes;DEBITO;1510;Detalle;0
-151029;Elementos para invidentes;DEBITO;1510;Detalle;0
-151030;Equipos de comunicación y computación;DEBITO;1510;Detalle;0
-151031;Aparatos telefónicos e identificadores de llamadas;DEBITO;1510;Detalle;0
-151032;Medidores de agua, luz y gas;DEBITO;1510;Detalle;0
-151036;Equipo de transporte;DEBITO;1510;Detalle;0
-151037;Muebles y enseres;DEBITO;1510;Detalle;0
-151039;Material didáctico;DEBITO;1510;Detalle;0
-151041;Maquinaria y elementos de ferretería;DEBITO;1510;Detalle;0
-151042;Productos agropecuarios, de silvicultura, avicultura y pesca;DEBITO;1510;Detalle;0
-151060;Medicamentos;DEBITO;1510;Detalle;0
-151061;Materiales médico - quirúrgicos;DEBITO;1510;Detalle;0
-151065;Víveres y rancho;DEBITO;1510;Detalle;0
-151090;Otras mercancías en existencia;DEBITO;1510;Detalle;0
-1512;MATERIAS PRIMAS;DEBITO;;General;
-151201;Materias primas;DEBITO;1512;Detalle;2
-1514;MATERIALES Y SUMINISTROS;DEBITO;;General;
-151401;Envases y empaques;DEBITO;1514;Detalle;4
-151402;Materiales para la producción de bienes;DEBITO;1514;Detalle;4
-151403;Medicamentos;DEBITO;1514;Detalle;4
-151404;Materiales médico - quirúrgicos;DEBITO;1514;Detalle;4
-151405;Materiales reactivos y de laboratorio;DEBITO;1514;Detalle;4
-151408;Víveres y rancho;DEBITO;1514;Detalle;4
-151409;Repuestos;DEBITO;1514;Detalle;4
-151412;Elementos y accesorios de telecomunicaciones;DEBITO;1514;Detalle;4
-151415;Materiales para educación;DEBITO;1514;Detalle;4
-151417;Elementos y accesorios de aseo;DEBITO;1514;Detalle;4
-151424;Elementos y materiales para construcción;DEBITO;1514;Detalle;4
-151490;Otros materiales y suministros;DEBITO;1514;Detalle;4
-1520;PRODUCTOS EN PROCESO;DEBITO;;General;
-152002;Construcciones;DEBITO;1520;Detalle;0
-152018;Productos alimenticios;DEBITO;1520;Detalle;0
-152034;Productos agropecuarios, de silvicultura, avicultura y pesca;DEBITO;1520;Detalle;0
-152090;Otros productos en proceso;DEBITO;1520;Detalle;0
-16;PROPIEDADES, PLANTA Y EQUIPO;DEBITO;;General;
-1605;TERRENOS;DEBITO;;General;
+1510;MERCANCÍAS EN EXISTENCIA;DEBITO;15;General;3
+151002;Terrenos;DEBITO;1510;Detalle;5
+151003;Construcciones;DEBITO;1510;Detalle;5
+151004;Impresos y publicaciones;DEBITO;1510;Detalle;5
+151012;Semovientes;DEBITO;1510;Detalle;5
+151029;Elementos para invidentes;DEBITO;1510;Detalle;5
+151030;Equipos de comunicación y computación;DEBITO;1510;Detalle;5
+151031;Aparatos telefónicos e identificadores de llamadas;DEBITO;1510;Detalle;5
+151032;Medidores de agua, luz y gas;DEBITO;1510;Detalle;5
+151036;Equipo de transporte;DEBITO;1510;Detalle;5
+151037;Muebles y enseres;DEBITO;1510;Detalle;5
+151039;Material didáctico;DEBITO;1510;Detalle;5
+151041;Maquinaria y elementos de ferretería;DEBITO;1510;Detalle;5
+151042;Productos agropecuarios, de silvicultura, avicultura y pesca;DEBITO;1510;Detalle;5
+151060;Medicamentos;DEBITO;1510;Detalle;5
+151061;Materiales médico - quirúrgicos;DEBITO;1510;Detalle;5
+151065;Víveres y rancho;DEBITO;1510;Detalle;5
+151090;Otras mercancías en existencia;DEBITO;1510;Detalle;5
+1512;MATERIAS PRIMAS;DEBITO;15;General;3
+151201;Materias primas;DEBITO;1512;Detalle;5
+1514;MATERIALES Y SUMINISTROS;DEBITO;15;General;3
+151401;Envases y empaques;DEBITO;1514;Detalle;5
+151402;Materiales para la producción de bienes;DEBITO;1514;Detalle;5
+151403;Medicamentos;DEBITO;1514;Detalle;5
+151404;Materiales médico - quirúrgicos;DEBITO;1514;Detalle;5
+151405;Materiales reactivos y de laboratorio;DEBITO;1514;Detalle;5
+151408;Víveres y rancho;DEBITO;1514;Detalle;5
+151409;Repuestos;DEBITO;1514;Detalle;5
+151412;Elementos y accesorios de telecomunicaciones;DEBITO;1514;Detalle;5
+151415;Materiales para educación;DEBITO;1514;Detalle;5
+151417;Elementos y accesorios de aseo;DEBITO;1514;Detalle;5
+151424;Elementos y materiales para construcción;DEBITO;1514;Detalle;5
+151490;Otros materiales y suministros;DEBITO;1514;Detalle;5
+1520;PRODUCTOS EN PROCESO;DEBITO;15;General;3
+152002;Construcciones;DEBITO;1520;Detalle;5
+152018;Productos alimenticios;DEBITO;1520;Detalle;5
+152034;Productos agropecuarios, de silvicultura, avicultura y pesca;DEBITO;1520;Detalle;5
+152090;Otros productos en proceso;DEBITO;1520;Detalle;5
+16;PROPIEDADES, PLANTA Y EQUIPO;DEBITO;1;General;2
+1605;TERRENOS;DEBITO;16;General;3
 160501;Urbanos;DEBITO;1605;Detalle;5
 160502;Rurales;DEBITO;1605;Detalle;5
 160503;Terrenos con destinación ambiental;DEBITO;1605;Detalle;5
 160504;Terrenos pendientes de legalizar;DEBITO;1605;Detalle;5
-1610;SEMOVIENTES Y PLANTAS;DEBITO;;General;
-161001;De trabajo;DEBITO;1610;Detalle;0
-161002;De selección;DEBITO;1610;Detalle;0
-161003;De investigación y educación;DEBITO;1610;Detalle;0
-161090;Otros semovientes y plantas;DEBITO;1610;Detalle;0
-1612;PLANTAS PRODUCTORAS;DEBITO;;General;
-161201;Cultivos en desarrollo;DEBITO;1612;Detalle;2
-161202;Cultivos amortizables;DEBITO;1612;Detalle;2
-1615;CONSTRUCCIONES EN CURSO;DEBITO;;General;
+1610;SEMOVIENTES Y PLANTAS;DEBITO;16;General;3
+161001;De trabajo;DEBITO;1610;Detalle;5
+161002;De selección;DEBITO;1610;Detalle;5
+161003;De investigación y educación;DEBITO;1610;Detalle;5
+161090;Otros semovientes y plantas;DEBITO;1610;Detalle;5
+1612;PLANTAS PRODUCTORAS;DEBITO;16;General;3
+161201;Cultivos en desarrollo;DEBITO;1612;Detalle;5
+161202;Cultivos amortizables;DEBITO;1612;Detalle;5
+1615;CONSTRUCCIONES EN CURSO;DEBITO;16;General;3
 161501;Edificaciones;DEBITO;1615;Detalle;5
-1636;PROPIEDADES, PLANTA Y EQUIPO EN MANTENIMIENTO;DEBITO;;General;
-163601;Edificaciones;DEBITO;1636;Detalle;6
-163605;Maquinaria y Equipo;DEBITO;1636;Detalle;6
-163609;Equipos de transporte, tracción y elevación;DEBITO;1636;Detalle;6
-1640;EDIFICACIONES;DEBITO;;General;
-164004;Locales;DEBITO;1640;Detalle;0
-164008;Cafeterías y casinos;DEBITO;1640;Detalle;0
-164009;Colegios y escuelas;DEBITO;1640;Detalle;0
-164014;Invernaderos;DEBITO;1640;Detalle;0
-164017;Parqueaderos y garajes;DEBITO;1640;Detalle;0
-164018;Bodegas;DEBITO;1640;Detalle;0
-164019;Instalaciones deportivas y recreacionales;DEBITO;1640;Detalle;0
-1642;REPUESTOS;DEBITO;;General;
-164204;Maquinaria y equipo;DEBITO;1642;Detalle;2
-164205;Equipo médico y científico;DEBITO;1642;Detalle;2
-164207;Equipos de comunicación y computación;DEBITO;1642;Detalle;2
-164208;Equipos de transporte, tracción y elevación;DEBITO;1642;Detalle;2
-164209;Equipos de comedor, cocina, despensa y hotelería;DEBITO;1642;Detalle;2
-164290;Otros repuestos;DEBITO;1642;Detalle;2
-1655;MAQUINARIA Y EQUIPO;DEBITO;;General;
+1636;PROPIEDADES, PLANTA Y EQUIPO EN MANTENIMIENTO;DEBITO;16;General;3
+163601;Edificaciones;DEBITO;1636;Detalle;5
+163605;Maquinaria y Equipo;DEBITO;1636;Detalle;5
+163609;Equipos de transporte, tracción y elevación;DEBITO;1636;Detalle;5
+1640;EDIFICACIONES;DEBITO;16;General;3
+164004;Locales;DEBITO;1640;Detalle;5
+164008;Cafeterías y casinos;DEBITO;1640;Detalle;5
+164009;Colegios y escuelas;DEBITO;1640;Detalle;5
+164014;Invernaderos;DEBITO;1640;Detalle;5
+164017;Parqueaderos y garajes;DEBITO;1640;Detalle;5
+164018;Bodegas;DEBITO;1640;Detalle;5
+164019;Instalaciones deportivas y recreacionales;DEBITO;1640;Detalle;5
+1642;REPUESTOS;DEBITO;16;General;3
+164204;Maquinaria y equipo;DEBITO;1642;Detalle;5
+164205;Equipo médico y científico;DEBITO;1642;Detalle;5
+164207;Equipos de comunicación y computación;DEBITO;1642;Detalle;5
+164208;Equipos de transporte, tracción y elevación;DEBITO;1642;Detalle;5
+164209;Equipos de comedor, cocina, despensa y hotelería;DEBITO;1642;Detalle;5
+164290;Otros repuestos;DEBITO;1642;Detalle;5
+1655;MAQUINARIA Y EQUIPO;DEBITO;16;General;3
 165501;Equipo de construcción;DEBITO;1655;Detalle;5
 165505;Equipo de música;DEBITO;1655;Detalle;5
 165506;Equipo de recreación y deporte;DEBITO;1655;Detalle;5
@@ -107,42 +107,42 @@
 165522;Equipo de ayuda audiovisual;DEBITO;1655;Detalle;5
 165523;Equipo de aseo;DEBITO;1655;Detalle;5
 165590;Otra maquinaria y equipo;DEBITO;1655;Detalle;5
-1660;EQUIPO MÉDICO Y CIENTÍFICO;DEBITO;;General;
-166001;Equipo de investigación;DEBITO;1660;Detalle;0
-166002;Equipo de laboratorio;DEBITO;1660;Detalle;0
-166090;Otro equipo médico y científico;DEBITO;1660;Detalle;0
-1665;MUEBLES, ENSERES Y EQUIPO DE OFICINA;DEBITO;;General;
+1660;EQUIPO MÉDICO Y CIENTÍFICO;DEBITO;16;General;3
+166001;Equipo de investigación;DEBITO;1660;Detalle;5
+166002;Equipo de laboratorio;DEBITO;1660;Detalle;5
+166090;Otro equipo médico y científico;DEBITO;1660;Detalle;5
+1665;MUEBLES, ENSERES Y EQUIPO DE OFICINA;DEBITO;16;General;3
 166501;Muebles y enseres;DEBITO;1665;Detalle;5
 166502;Equipo y máquina de oficina;DEBITO;1665;Detalle;5
 166590;Otros muebles, enseres y equipo de oficina;DEBITO;1665;Detalle;5
-1670;EQUIPOS DE COMUNICACIÓN Y COMPUTACIÓN;DEBITO;;General;
-167001;Equipo de comunicación;DEBITO;1670;Detalle;0
-167002;Equipo de computación;DEBITO;1670;Detalle;0
-167004;Satélites y antenas;DEBITO;1670;Detalle;0
-167090;Otros equipos de comunicación y computación;DEBITO;1670;Detalle;0
-1675;EQUIPOS DE TRANSPORTE, TRACCIÓN Y ELEVACIÓN;DEBITO;;General;
+1670;EQUIPOS DE COMUNICACIÓN Y COMPUTACIÓN;DEBITO;16;General;3
+167001;Equipo de comunicación;DEBITO;1670;Detalle;5
+167002;Equipo de computación;DEBITO;1670;Detalle;5
+167004;Satélites y antenas;DEBITO;1670;Detalle;5
+167090;Otros equipos de comunicación y computación;DEBITO;1670;Detalle;5
+1675;EQUIPOS DE TRANSPORTE, TRACCIÓN Y ELEVACIÓN;DEBITO;16;General;3
 167502;Terrestre;DEBITO;1675;Detalle;5
 167504;Marítimo y fluvial;DEBITO;1675;Detalle;5
 167590;Otros equipos de transporte, tracción y elevación;DEBITO;1675;Detalle;5
-1680;EQUIPOS DE COMEDOR, COCINA, DESPENSA Y HOTELERÍA;DEBITO;;General;
-168002;Equipo de restaurante y cafetería;DEBITO;1680;Detalle;0
-168090;Otros equipos de comedor, cocina, despensa y hotelería;DEBITO;1680;Detalle;0
-1681;BIENES DE ARTE Y CULTURA;DEBITO;;General;
-168103;Bienes de culto;DEBITO;1681;Detalle;1
-168105;Elementos de museo;DEBITO;1681;Detalle;1
-168106;Elementos musicales;DEBITO;1681;Detalle;1
-168107;Libros y publicaciones de investigación y consulta;DEBITO;1681;Detalle;1
-168190;Otros bienes de arte y cultura;DEBITO;1681;Detalle;1
-1683;PROPIEDADES, PLANTA Y EQUIPO EN CONCESIÓN;DEBITO;;General;
-168301;Terrenos;DEBITO;1683;Detalle;3
-168302;Edificaciones;DEBITO;1683;Detalle;3
-168305;Maquinaria y Equipo;DEBITO;1683;Detalle;3
-168306;Equipo médico y científico;DEBITO;1683;Detalle;3
-168307;Muebles, enseres y equipo de oficina;DEBITO;1683;Detalle;3
-168308;Equipos de comunicación y computación;DEBITO;1683;Detalle;3
-168309;Equipos de transporte, tracción y elevación;DEBITO;1683;Detalle;3
-168390;Otras propiedades, planta y equipo en concesión;DEBITO;1683;Detalle;3
-1685;DEPRECIACIÓN ACUMULADA DE PROPIEDADES, PLANTA Y EQUIPO (CR);DEBITO;;General;
+1680;EQUIPOS DE COMEDOR, COCINA, DESPENSA Y HOTELERÍA;DEBITO;16;General;3
+168002;Equipo de restaurante y cafetería;DEBITO;1680;Detalle;5
+168090;Otros equipos de comedor, cocina, despensa y hotelería;DEBITO;1680;Detalle;5
+1681;BIENES DE ARTE Y CULTURA;DEBITO;16;General;5
+168103;Bienes de culto;DEBITO;1681;Detalle;3
+168105;Elementos de museo;DEBITO;1681;Detalle;5
+168106;Elementos musicales;DEBITO;1681;Detalle;5
+168107;Libros y publicaciones de investigación y consulta;DEBITO;1681;Detalle;5
+168190;Otros bienes de arte y cultura;DEBITO;1681;Detalle;5
+1683;PROPIEDADES, PLANTA Y EQUIPO EN CONCESIÓN;DEBITO;16;General;3
+168301;Terrenos;DEBITO;1683;Detalle;5
+168302;Edificaciones;DEBITO;1683;Detalle;5
+168305;Maquinaria y Equipo;DEBITO;1683;Detalle;5
+168306;Equipo médico y científico;DEBITO;1683;Detalle;5
+168307;Muebles, enseres y equipo de oficina;DEBITO;1683;Detalle;5
+168308;Equipos de comunicación y computación;DEBITO;1683;Detalle;5
+168309;Equipos de transporte, tracción y elevación;DEBITO;1683;Detalle;5
+168390;Otras propiedades, planta y equipo en concesión;DEBITO;1683;Detalle;5
+1685;DEPRECIACIÓN ACUMULADA DE PROPIEDADES, PLANTA Y EQUIPO (CR);DEBITO;16;General;3
 168501;Edificaciones;DEBITO;1685;Detalle;5
 168504;Maquinaria y equipo;DEBITO;1685;Detalle;5
 168505;Equipo médico y científico;DEBITO;1685;Detalle;5
@@ -159,7 +159,7 @@
 168516;Propiedades, planta y equipo en concesión;DEBITO;1685;Detalle;5
 168517;Terrenos con vida útil finita;DEBITO;1685;Detalle;5
 168518;Repuestos;DEBITO;1685;Detalle;5
-1695;DETERIORO ACUMULADO DE PROPIEDADES, PLANTA Y EQUIPO (CR);DEBITO;;General;
+1695;DETERIORO ACUMULADO DE PROPIEDADES, PLANTA Y EQUIPO (CR);DEBITO;16;General;3
 169501;Terrenos;DEBITO;1695;Detalle;5
 169502;Semovientes y plantas;DEBITO;1695;Detalle;5
 169503;Construcciones en curso;DEBITO;1695;Detalle;5
@@ -178,51 +178,51 @@
 169523;Bienes muebles en bodega;DEBITO;1695;Detalle;5
 169524;Propiedades, planta y equipo en mantenimiento;DEBITO;1695;Detalle;5
 169525;Propiedades, planta y equipo no explotados;DEBITO;1695;Detalle;5
-17;BIENES DE USO PÚBLICO E HISTÓRICOS Y CULTURALES;DEBITO;;General;
-1705;BIENES DE USO PÚBLICO EN CONSTRUCCIÓN;DEBITO;;General;
+17;BIENES DE USO PÚBLICO E HISTÓRICOS Y CULTURALES;DEBITO;1;General;2
+1705;BIENES DE USO PÚBLICO EN CONSTRUCCIÓN;DEBITO;17;General;3
 170510;Bibliotecas;DEBITO;1705;Detalle;5
 170511;Hemerotecas;DEBITO;1705;Detalle;5
 170590;Otros bienes de uso público en construcción;DEBITO;1705;Detalle;5
-1710;BIENES DE USO PÚBLICO EN SERVICIO;DEBITO;;General;
-171010;Bibliotecas;DEBITO;1710;Detalle;0
-171011;Hemerotecas;DEBITO;1710;Detalle;0
-171013;Museos;DEBITO;1710;Detalle;0
-171014;Terrenos;DEBITO;1710;Detalle;0
-171016;Escenarios culturales;DEBITO;1710;Detalle;0
-171090;Otros bienes de uso público en servicio;DEBITO;1710;Detalle;0
-1715;BIENES HISTÓRICOS Y CULTURALES;DEBITO;;General;
+1710;BIENES DE USO PÚBLICO EN SERVICIO;DEBITO;17;General;3
+171010;Bibliotecas;DEBITO;1710;Detalle;5
+171011;Hemerotecas;DEBITO;1710;Detalle;5
+171013;Museos;DEBITO;1710;Detalle;5
+171014;Terrenos;DEBITO;1710;Detalle;5
+171016;Escenarios culturales;DEBITO;1710;Detalle;5
+171090;Otros bienes de uso público en servicio;DEBITO;1710;Detalle;5
+1715;BIENES HISTÓRICOS Y CULTURALES;DEBITO;17;General;3
 171502;Museos;DEBITO;1715;Detalle;5
 171503;Obras de arte;DEBITO;1715;Detalle;5
 171504;Bienes arqueológicos;DEBITO;1715;Detalle;5
 171508;Elementos de museo;DEBITO;1715;Detalle;5
 171509;Libros y publicaciones;DEBITO;1715;Detalle;5
 171590;Otros bienes históricos y culturales;DEBITO;1715;Detalle;5
-1785;DEPRECIACIÓN ACUMULADA DE BIENES DE USO PÚBLICO EN SERVICIO (CR);DEBITO;;General;
+1785;DEPRECIACIÓN ACUMULADA DE BIENES DE USO PÚBLICO EN SERVICIO (CR);DEBITO;17;General;3
 178510;Bibliotecas;DEBITO;1785;Detalle;5
 178511;Hemerotecas;DEBITO;1785;Detalle;5
 178513;Bienes de uso público representados en bienes de arte y cultura;DEBITO;1785;Detalle;5
 178515;Escenarios culturales;DEBITO;1785;Detalle;5
 178590;Otros bienes de uso público en servicio;DEBITO;1785;Detalle;5
-2;PASIVOS;CREDITO;;General;
-24;CUENTAS POR PAGAR;CREDITO;;General;
-2401;ADQUISICIÓN DE BIENES Y SERVICIOS NACIONALES;CREDITO;;General;
-240101;Bienes y servicios;CREDITO;2401;Detalle;1
-2407;RECURSOS A FAVOR DE TERCEROS;CREDITO;;General;
-240722;Estampillas;CREDITO;2407;Detalle;7
-240790;Otros recursos a favor de terceros;CREDITO;2407;Detalle;7
-2436;RETENCIÓN EN LA FUENTE E IMPUESTO DE TIMBRE;CREDITO;;General;
-243603;Honorarios;CREDITO;2436;Detalle;6
-243605;Servicios;CREDITO;2436;Detalle;6
-243606;Arrendamientos;CREDITO;2436;Detalle;6
-243608;Compras;CREDITO;2436;Detalle;6
-243625;Impuesto a las ventas retenido;CREDITO;2436;Detalle;6
-243626;Contratos de construcción;CREDITO;2436;Detalle;6
-243627;Retención de impuesto de industria y comercio por compras;CREDITO;2436;Detalle;6
-243628;Retención de impuesto de industria y comercio por ventas;CREDITO;2436;Detalle;6
-243690;Otras retenciones;CREDITO;2436;General;6
-2440;IMPUESTOS, CONTRIBUCIONES Y TASAS;CREDITO;;Detalle;
-244020;Gravamen a los movimientos financieros;CREDITO;2440;Detalle;0
-2445;IMPUESTO AL VALOR AGREGADO - IVA;CREDITO;;General;
+2;PASIVOS;CREDITO;;General;1
+24;CUENTAS POR PAGAR;CREDITO;2;General;2
+2401;ADQUISICIÓN DE BIENES Y SERVICIOS NACIONALES;CREDITO;24;General;3
+240101;Bienes y servicios;CREDITO;2401;Detalle;5
+2407;RECURSOS A FAVOR DE TERCEROS;CREDITO;24;General;3
+240722;Estampillas;CREDITO;2407;Detalle;5
+240790;Otros recursos a favor de terceros;CREDITO;2407;Detalle;5
+2436;RETENCIÓN EN LA FUENTE E IMPUESTO DE TIMBRE;CREDITO;24;General;3
+243603;Honorarios;CREDITO;2436;Detalle;5
+243605;Servicios;CREDITO;2436;Detalle;5
+243606;Arrendamientos;CREDITO;2436;Detalle;5
+243608;Compras;CREDITO;2436;Detalle;5
+243625;Impuesto a las ventas retenido;CREDITO;2436;Detalle;5
+243626;Contratos de construcción;CREDITO;2436;Detalle;5
+243627;Retención de impuesto de industria y comercio por compras;CREDITO;2436;Detalle;5
+243628;Retención de impuesto de industria y comercio por ventas;CREDITO;2436;Detalle;5
+243690;Otras retenciones;CREDITO;2436;General;5
+2440;IMPUESTOS, CONTRIBUCIONES Y TASAS;CREDITO;24;Detalle;3
+244020;Gravamen a los movimientos financieros;CREDITO;2440;Detalle;5
+2445;IMPUESTO AL VALOR AGREGADO - IVA;CREDITO;24;General;3
 244501;Venta de bienes;CREDITO;2445;Detalle;5
 244502;Venta de servicios;CREDITO;2445;Detalle;5
 244503;Devoluciones en compra de bienes;CREDITO;2445;Detalle;5
@@ -231,141 +231,141 @@
 244506;Compra de servicios (Db);CREDITO;2445;Detalle;5
 244507;Devoluciones en venta de bienes (Db);CREDITO;2445;Detalle;5
 244508;Devoluciones en venta de servicios (Db);CREDITO;2445;Detalle;5
-2490;OTRAS CUENTAS POR PAGAR;CREDITO;;General;
-249028;Seguros;CREDITO;2490;Detalle;0
-249054;Honorarios;CREDITO;2490;Detalle;0
-249055;Servicios;CREDITO;2490;Detalle;0
-249090;Otras cuentas por pagar;CREDITO;2490;Detalle;0
-3;PATRIMONIO;CREDITO;;General;
-31;PATRIMONIO DE LAS ENTIDADES DE GOBIERNO;CREDITO;;General;
-3105;CAPITAL FISCAL;CREDITO;;General;
+2490;OTRAS CUENTAS POR PAGAR;CREDITO;24;General;3
+249028;Seguros;CREDITO;2490;Detalle;5
+249054;Honorarios;CREDITO;2490;Detalle;5
+249055;Servicios;CREDITO;2490;Detalle;5
+249090;Otras cuentas por pagar;CREDITO;2490;Detalle;5
+3;PATRIMONIO;CREDITO;;General;1
+31;PATRIMONIO DE LAS ENTIDADES DE GOBIERNO;CREDITO;3;General;2
+3105;CAPITAL FISCAL;CREDITO;31;General;3
 310506;Capital Fiscal;CREDITO;3105;Detalle;5
-3109;RESULTADOS DE EJERCICIOS ANTERIORES;CREDITO;;General;
-310901;Utilidades o excedentes acumulados;CREDITO;3109;Detalle;9
-310902;Pérdidas o déficits acumulados;CREDITO;3109;Detalle;9
-3110;RESULTADO DEL EJERCICIO;CREDITO;;General;
-311001;Utilidad o excedente del ejercicio;CREDITO;3110;Detalle;0
-311002;Pérdida o déficit del ejercicio;CREDITO;3110;Detalle;0
-3114;RESERVAS;CREDITO;;General;
-311402;Reservas estatutarias;CREDITO;3114;Detalle;4
-311403;Reservas ocasionales;CREDITO;3114;Detalle;4
-311405;Fondos patrimoniales;CREDITO;3114;Detalle;4
-311490;Otras reservas;CREDITO;3114;Detalle;4
-4;INGRESOS;CREDITO;;General;
-42;VENTA DE BIENES;CREDITO;;General;
-4204;BIENES PRODUCIDOS;CREDITO;;General;
-420416;Productos agropecuarios, de silvicultura, avicultura y pesca;CREDITO;4204;Detalle;4
-420418;Productos alimenticios;CREDITO;4204;Detalle;4
-420490;Otros bienes producidos;CREDITO;4204;Detalle;4
-4210;BIENES COMERCIALIZADOS;CREDITO;;General;
-421012;Semovientes;CREDITO;4210;Detalle;0
-421040;Productos agropecuarios, de silvicultura, avicultura y pesca;CREDITO;4210;Detalle;0
-421090;Otros bienes comercializados;CREDITO;4210;Detalle;0
-4305;SERVICIOS EDUCATIVOS;CREDITO;;General;
+3109;RESULTADOS DE EJERCICIOS ANTERIORES;CREDITO;31;General;3
+310901;Utilidades o excedentes acumulados;CREDITO;3109;Detalle;5
+310902;Pérdidas o déficits acumulados;CREDITO;3109;Detalle;5
+3110;RESULTADO DEL EJERCICIO;CREDITO;31;General;3
+311001;Utilidad o excedente del ejercicio;CREDITO;3110;Detalle;5
+311002;Pérdida o déficit del ejercicio;CREDITO;3110;Detalle;5
+3114;RESERVAS;CREDITO;31;General;3
+311402;Reservas estatutarias;CREDITO;3114;Detalle;5
+311403;Reservas ocasionales;CREDITO;3114;Detalle;5
+311405;Fondos patrimoniales;CREDITO;3114;Detalle;5
+311490;Otras reservas;CREDITO;3114;Detalle;5
+4;INGRESOS;CREDITO;;General;1
+42;VENTA DE BIENES;CREDITO;4;General;2
+4204;BIENES PRODUCIDOS;CREDITO;42;General;3
+420416;Productos agropecuarios, de silvicultura, avicultura y pesca;CREDITO;4204;Detalle;5
+420418;Productos alimenticios;CREDITO;4204;Detalle;5
+420490;Otros bienes producidos;CREDITO;4204;Detalle;5
+4210;BIENES COMERCIALIZADOS;CREDITO;42;General;3
+421012;Semovientes;CREDITO;4210;Detalle;5
+421040;Productos agropecuarios, de silvicultura, avicultura y pesca;CREDITO;4210;Detalle;5
+421090;Otros bienes comercializados;CREDITO;4210;Detalle;5
+4305;SERVICIOS EDUCATIVOS;CREDITO;4;General;3
 430550;Servicios conexos a la educación;CREDITO;4305;Detalle;5
-4408;SISTEMA GENERAL DE PARTICIPACIONES;CREDITO;;General;
-440818;Participación para educación;CREDITO;4408;Detalle;8
-440821;Programas de alimentación escolar;CREDITO;4408;Detalle;8
-440823;Resguardos Indígenas;CREDITO;4408;Detalle;8
-48;OTROS INGRESOS;CREDITO;;General;
-4802;FINANCIEROS;CREDITO;;General;
-480201;Intereses sobre depósitos en instituciones financieras;CREDITO;4802;Detalle;2
-4808;INGRESOS DIVERSOS;CREDITO;;General;
-480817;Arrendamiento operativo;CREDITO;4808;Detalle;8
-480825;Sobrantes;CREDITO;4808;Detalle;8
-480890;Otros ingresos diversos;CREDITO;4808;Detalle;8
-5;GASTOS;CREDITO;;General;
-51;DE ADMINISTRACIÓN Y OPERACIÓN;DEBITO;;General;
-5111;GENERALES;DEBITO;;General;
-511114;Materiales y suministros;DEBITO;5111;Detalle;1
-511115;Mantenimiento;DEBITO;5111;Detalle;1
-511116;Reparaciones;DEBITO;5111;Detalle;1
-511117;Servicios públicos;DEBITO;5111;Detalle;1
-511119;Viáticos y gastos de viaje;DEBITO;5111;Detalle;1
-511120;Publicidad y propaganda;DEBITO;5111;Detalle;1
-511121;Impresos, publicaciones, suscripciones y afiliaciones;DEBITO;5111;Detalle;1
-511122;Fotocopias;DEBITO;5111;Detalle;1
-511123;Comunicaciones y transporte;DEBITO;5111;Detalle;1
-511125;Seguros generales;DEBITO;5111;Detalle;1
-511130;Alimentación escolar;DEBITO;5111;Detalle;1
-511131;Materiales de educación;DEBITO;5111;Detalle;1
-511134;Asistencia técnica agropecuaria;DEBITO;5111;Detalle;1
-511136;Implementos deportivos;DEBITO;5111;Detalle;1
-511137;Eventos culturales;DEBITO;5111;Detalle;1
-511138;Reubicación de asentamientos;DEBITO;5111;Detalle;1
-511141;Sostenimiento de semovientes y plantas;DEBITO;5111;Detalle;1
-511146;Combustibles y lubricantes;DEBITO;5111;Detalle;1
-511155;Elementos de aseo, lavandería y cafetería;DEBITO;5111;Detalle;1
-511165;Intangibles;DEBITO;5111;Detalle;1
-511179;Honorarios;DEBITO;5111;Detalle;1
-511180;Servicios;DEBITO;5111;Detalle;1
-511190;Otros gastos generales;DEBITO;5111;Detalle;1
-5120;IMPUESTOS, CONTRIBUCIONES Y TASAS;DEBITO;;General;
-512024;Gravamen a los movimientos financieros;DEBITO;5120;Detalle;0
-53;DETERIORO, DEPRECIACIONES, AMORTIZACIONES Y PROVISIONES;DEBITO;;General;
-5350;DETERIORO DE INVENTARIOS;DEBITO;;General;
-535001;Bienes producidos;DEBITO;5350;Detalle;0
-535002;Mercancías en existencia;DEBITO;5350;Detalle;0
-535003;Productos en proceso;DEBITO;5350;Detalle;0
-535004;Materias primas;DEBITO;5350;Detalle;0
-535008;Materiales y suministros;DEBITO;5350;Detalle;0
-5351;DETERIORO DE PROPIEDADES, PLANTA Y EQUIPO;DEBITO;;General;
-535101;Terrenos;DEBITO;5351;Detalle;1
-535102;Semovientes y plantas;DEBITO;5351;Detalle;1
-535103;Construcciones en curso;DEBITO;5351;Detalle;1
-535104;Maquinaria, planta y equipo en montaje;DEBITO;5351;Detalle;1
-535105;Edificaciones;DEBITO;5351;Detalle;1
-535108;Maquinaria y equipo;DEBITO;5351;Detalle;1
-535110;Muebles, enseres y equipo de oficina;DEBITO;5351;Detalle;1
-535111;Equipos de comunicación y computación;DEBITO;5351;Detalle;1
-535112;Equipo de transporte, tracción y elevación;DEBITO;5351;Detalle;1
-535113;Equipos de comedor, cocina, despensa y hotelería;DEBITO;5351;Detalle;1
-535115;Repuestos;DEBITO;5351;Detalle;1
-535116;Maquinaria, planta y equipo en tránsito;DEBITO;5351;Detalle;1
-535117;Bienes de arte y cultura;DEBITO;5351;Detalle;1
-535119;Bienes muebles en bodega;DEBITO;5351;Detalle;1
-535120;Propiedades, planta y equipo en mantenimiento;DEBITO;5351;Detalle;1
-5357;DETERIORO DE ACTIVOS INTANGIBLES;DEBITO;;General;
-535706;Licencias;DEBITO;5357;Detalle;7
-535707;Softwares;DEBITO;5357;Detalle;7
-535790;Otros activos intangibles;DEBITO;5357;Detalle;7
-5360;DEPRECIACIÓN DE PROPIEDADES, PLANTA Y EQUIPO;DEBITO;;General;
-536001;Edificaciones;DEBITO;5360;Detalle;0
-536004;Maquinaria y equipo;DEBITO;5360;Detalle;0
-536006;Muebles, enseres y equipo de oficina;DEBITO;5360;Detalle;0
-536007;Equipos de comunicación y computación;DEBITO;5360;Detalle;0
-536008;Equipos de transporte, tracción y elevación;DEBITO;5360;Detalle;0
-536009;Equipos de comedor, cocina, despensa y hotelería;DEBITO;5360;Detalle;0
-536010;Semovientes y plantas;DEBITO;5360;Detalle;0
-536012;Bienes de arte y cultura;DEBITO;5360;Detalle;0
-57;OPERACIONES INTERINSTITUCIONALES;DEBITO;;General;
-5722;OPERACIONES SIN FLUJO DE EFECTIVO;DEBITO;;General;
-572201;Cruce de cuentas;DEBITO;5722;Detalle;2
-58;OTROS GASTOS;DEBITO;;General;
-5804;FINANCIEROS;DEBITO;;General;
-580490;Otros gastos financieros;DEBITO;5804;Detalle;4
-5890;GASTOS DIVERSOS;DEBITO;;General;
-589090;Otros gastos diversos;DEBITO;5890;Detalle;0
-59;CIERRE DE INGRESOS, GASTOS Y COSTOS;DEBITO;;General;
-5905;CIERRE DE INGRESOS, GASTOS Y COSTOS;DEBITO;;General;
+4408;SISTEMA GENERAL DE PARTICIPACIONES;CREDITO;4;General;3
+440818;Participación para educación;CREDITO;4408;Detalle;5
+440821;Programas de alimentación escolar;CREDITO;4408;Detalle;5
+440823;Resguardos Indígenas;CREDITO;4408;Detalle;5
+48;OTROS INGRESOS;CREDITO;4;General;2
+4802;FINANCIEROS;CREDITO;48;General;3
+480201;Intereses sobre depósitos en instituciones financieras;CREDITO;4802;Detalle;5
+4808;INGRESOS DIVERSOS;CREDITO;48;General;3
+480817;Arrendamiento operativo;CREDITO;4808;Detalle;5
+480825;Sobrantes;CREDITO;4808;Detalle;5
+480890;Otros ingresos diversos;CREDITO;4808;Detalle;5
+5;GASTOS;CREDITO;;General;1
+51;DE ADMINISTRACIÓN Y OPERACIÓN;DEBITO;5;General;2
+5111;GENERALES;DEBITO;51;General;3
+511114;Materiales y suministros;DEBITO;5111;Detalle;5
+511115;Mantenimiento;DEBITO;5111;Detalle;5
+511116;Reparaciones;DEBITO;5111;Detalle;5
+511117;Servicios públicos;DEBITO;5111;Detalle;5
+511119;Viáticos y gastos de viaje;DEBITO;5111;Detalle;5
+511120;Publicidad y propaganda;DEBITO;5111;Detalle;5
+511121;Impresos, publicaciones, suscripciones y afiliaciones;DEBITO;5111;Detalle;5
+511122;Fotocopias;DEBITO;5111;Detalle;5
+511123;Comunicaciones y transporte;DEBITO;5111;Detalle;5
+511125;Seguros generales;DEBITO;5111;Detalle;5
+511130;Alimentación escolar;DEBITO;5111;Detalle;5
+511131;Materiales de educación;DEBITO;5111;Detalle;5
+511134;Asistencia técnica agropecuaria;DEBITO;5111;Detalle;5
+511136;Implementos deportivos;DEBITO;5111;Detalle;5
+511137;Eventos culturales;DEBITO;5111;Detalle;5
+511138;Reubicación de asentamientos;DEBITO;5111;Detalle;5
+511141;Sostenimiento de semovientes y plantas;DEBITO;5111;Detalle;5
+511146;Combustibles y lubricantes;DEBITO;5111;Detalle;5
+511155;Elementos de aseo, lavandería y cafetería;DEBITO;5111;Detalle;5
+511165;Intangibles;DEBITO;5111;Detalle;5
+511179;Honorarios;DEBITO;5111;Detalle;5
+511180;Servicios;DEBITO;5111;Detalle;5
+511190;Otros gastos generales;DEBITO;5111;Detalle;5
+5120;IMPUESTOS, CONTRIBUCIONES Y TASAS;DEBITO;51;General;3
+512024;Gravamen a los movimientos financieros;DEBITO;5120;Detalle;5
+53;DETERIORO, DEPRECIACIONES, AMORTIZACIONES Y PROVISIONES;DEBITO;5;General;2
+5350;DETERIORO DE INVENTARIOS;DEBITO;53;General;3
+535001;Bienes producidos;DEBITO;5350;Detalle;5
+535002;Mercancías en existencia;DEBITO;5350;Detalle;5
+535003;Productos en proceso;DEBITO;5350;Detalle;5
+535004;Materias primas;DEBITO;5350;Detalle;5
+535008;Materiales y suministros;DEBITO;5350;Detalle;5
+5351;DETERIORO DE PROPIEDADES, PLANTA Y EQUIPO;DEBITO;53;General;3
+535101;Terrenos;DEBITO;5351;Detalle;5
+535102;Semovientes y plantas;DEBITO;5351;Detalle;5
+535103;Construcciones en curso;DEBITO;5351;Detalle;5
+535104;Maquinaria, planta y equipo en montaje;DEBITO;5351;Detalle;5
+535105;Edificaciones;DEBITO;5351;Detalle;5
+535108;Maquinaria y equipo;DEBITO;5351;Detalle;5
+535110;Muebles, enseres y equipo de oficina;DEBITO;5351;Detalle;5
+535111;Equipos de comunicación y computación;DEBITO;5351;Detalle;5
+535112;Equipo de transporte, tracción y elevación;DEBITO;5351;Detalle;5
+535113;Equipos de comedor, cocina, despensa y hotelería;DEBITO;5351;Detalle;5
+535115;Repuestos;DEBITO;5351;Detalle;5
+535116;Maquinaria, planta y equipo en tránsito;DEBITO;5351;Detalle;5
+535117;Bienes de arte y cultura;DEBITO;5351;Detalle;5
+535119;Bienes muebles en bodega;DEBITO;5351;Detalle;5
+535120;Propiedades, planta y equipo en mantenimiento;DEBITO;5351;Detalle;5
+5357;DETERIORO DE ACTIVOS INTANGIBLES;DEBITO;53;General;3
+535706;Licencias;DEBITO;5357;Detalle;5
+535707;Softwares;DEBITO;5357;Detalle;5
+535790;Otros activos intangibles;DEBITO;5357;Detalle;5
+5360;DEPRECIACIÓN DE PROPIEDADES, PLANTA Y EQUIPO;DEBITO;53;General;3
+536001;Edificaciones;DEBITO;5360;Detalle;5
+536004;Maquinaria y equipo;DEBITO;5360;Detalle;5
+536006;Muebles, enseres y equipo de oficina;DEBITO;5360;Detalle;5
+536007;Equipos de comunicación y computación;DEBITO;5360;Detalle;5
+536008;Equipos de transporte, tracción y elevación;DEBITO;5360;Detalle;5
+536009;Equipos de comedor, cocina, despensa y hotelería;DEBITO;5360;Detalle;5
+536010;Semovientes y plantas;DEBITO;5360;Detalle;5
+536012;Bienes de arte y cultura;DEBITO;5360;Detalle;5
+57;OPERACIONES INTERINSTITUCIONALES;DEBITO;5;General;2
+5722;OPERACIONES SIN FLUJO DE EFECTIVO;DEBITO;57;General;3
+572201;Cruce de cuentas;DEBITO;5722;Detalle;5
+58;OTROS GASTOS;DEBITO;5;General;2
+5804;FINANCIEROS;DEBITO;58;General;3
+580490;Otros gastos financieros;DEBITO;5804;Detalle;5
+5890;GASTOS DIVERSOS;DEBITO;58;General;3
+589090;Otros gastos diversos;DEBITO;5890;Detalle;5
+59;CIERRE DE INGRESOS, GASTOS Y COSTOS;DEBITO;5;General;2
+5905;CIERRE DE INGRESOS, GASTOS Y COSTOS;DEBITO;59;General;3
 590501;Cierre de ingresos, gastos y costos;DEBITO;5905;Detalle;5
-6;COSTOS DE VENTAS;DEBITO;;General;
-62;COSTO DE VENTAS DE BIENES;DEBITO;;General;
-6205;BIENES PRODUCIDOS;DEBITO;;General;
+6;COSTOS DE VENTAS;DEBITO;;General;1
+62;COSTO DE VENTAS DE BIENES;DEBITO;6;General;2
+6205;BIENES PRODUCIDOS;DEBITO;62;General;3
 620518;Productos de madera;DEBITO;6205;Detalle;5
 620520;Productos alimenticios;DEBITO;6205;Detalle;5
 620529;Productos agropecuarios, de silvicultura, avicultura y pesca;DEBITO;6205;Detalle;5
 620590;Otros bienes producidos;DEBITO;6205;Detalle;5
-6210;BIENES COMERCIALIZADOS;DEBITO;;General;
-621010;Semovientes;DEBITO;6210;Detalle;0
-621015;Productos artesanales;DEBITO;6210;Detalle;0
-621040;Productos agropecuarios, de silvicultura, avicultura y pesca;DEBITO;6210;Detalle;0
-621090;Otros bienes comercializados;DEBITO;6210;Detalle;0
-63;COSTO DE VENTAS DE SERVICIOS;DEBITO;;General;
-6305;SERVICIOS EDUCATIVOS;DEBITO;;General;
+6210;BIENES COMERCIALIZADOS;DEBITO;62;General;3
+621010;Semovientes;DEBITO;6210;Detalle;5
+621015;Productos artesanales;DEBITO;6210;Detalle;5
+621040;Productos agropecuarios, de silvicultura, avicultura y pesca;DEBITO;6210;Detalle;5
+621090;Otros bienes comercializados;DEBITO;6210;Detalle;5
+63;COSTO DE VENTAS DE SERVICIOS;DEBITO;6;General;2
+6305;SERVICIOS EDUCATIVOS;DEBITO;63;General;3
 630550;Servicios conexos a la educación;DEBITO;6305;Detalle;5
-8;CUENTAS DE ORDEN DEUDORAS;DEBITO-CREDITO;;Detalle;
-8390;OTRAS CUENTAS DEUDORAS DE CONTROL;DEBITO-CREDITO;;General;
-839090;Otras cuentas deudoras de control;DEBITO-CREDITO;8390;Detalle;0
-8915;DEUDORAS DE CONTROL POR CONTRA (CR);DEBITO-CREDITO;;General;
+8;CUENTAS DE ORDEN DEUDORAS;DEBITO-CREDITO;;Detalle;1
+8390;OTRAS CUENTAS DEUDORAS DE CONTROL;DEBITO-CREDITO;8;General;3
+839090;Otras cuentas deudoras de control;DEBITO-CREDITO;8390;Detalle;5
+8915;DEUDORAS DE CONTROL POR CONTRA (CR);DEBITO-CREDITO;8;General;3
 891590;Otras cuentas deudoras de control por contra;DEBITO-CREDITO;8915;Detalle;5
